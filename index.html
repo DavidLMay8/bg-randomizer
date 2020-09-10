@@ -9,11 +9,16 @@
     let seasonOneInvestigators = ["Jack", "Joe"]
     let seasonTwoInvestigators = ["Kate", "Mary"]
 
-    function addSeasonOneInvestigators() {
+    let elderCount
+    let elderList = []
+    let elderResult = ""
+    let seasonOneElders = ["Cthulhu", "Hastur"]
+
+    function addSeasonOneInvestigators(x) {
         var i 
-            for (i = 0; i < seasonOneInvestigators.length; i++) {
-                investigatorList.push(seasonOneInvestigators[i])       
-            } 
+        for (i = 0; i < x.length; i++) {
+            investigatorList.push(x[i])       
+        } 
     }
     
     function addSeasonTwoInvestigators() {
@@ -25,6 +30,7 @@
     
     function showInput() {
         let investigatorList = []
+        let totalCount = 0
         investigatorResult = ""
         let investigatorDropdownSelection = document.getElementById("investigatorCountDropdown")
         let investigatorCount = investigatorDropdownSelection.options[investigatorDropdownSelection.selectedIndex].text
@@ -42,6 +48,8 @@
                 investigatorList.push(seasonTwoInvestigators[i])
             }
         }
+
+        totalCount = investigatorList.length // Count the number of investigators available before they get removed from the array so we can warn if the team will be larger than the available investigators.
         
         var i
         for (i = 0; i < investigatorCount; i++) {
@@ -51,17 +59,11 @@
             investigatorResult += num + "<br/>" 
         }
         
-        /* investigatorList.sort(() => Math.random() - 0.5)
-        var i
-        for (i = 0; i < investigatorCount; i++) {
-            investigatorResult += investigatorList[i] + "<br/>"
-        } */
-        
-        if (investigatorList.length < investigatorCount - 1) {
-            investigatorResult = "Not enough investigators chosen!"
+        if (totalCount < investigatorCount) {
+            investigatorResult = "Not enough investigators!"
         }
-
-        document.getElementById("display").innerHTML = investigatorResult
+        
+        document.getElementById("investigators").innerHTML = investigatorResult
     }
 
   </script>
@@ -83,7 +85,8 @@
   </form>
 
   <input type="submit" value="Create Team" onclick="showInput();"><br/>
-  <label>Your input: </label> 
-  <p><span id='display'></span></p>
+  <label>Your team: </label> 
+  <p><span id="investigators"></span></p>
+  <p>Versus:</p>
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    let investigatorCount
+    let investigatorList = []
+    let investigatorResult = ""
+    let seasonOneInvestigators = ["Jack", "Joe"]
+    let seasonTwoInvestigators = ["Kate", "Mary"]
+
+    function addSeasonOneInvestigators() {
+        var i 
+            for (i = 0; i < seasonOneInvestigators.length; i++) {
+                investigatorList.push(seasonOneInvestigators[i])       
+            } 
+    }
+    
+    function addSeasonTwoInvestigators() {
+        var i 
+            for (i = 0; i < seasonTwoInvestigators.length; i++) {
+                investigatorList.push(seasonTwoInvestigators[i])       
+            }
+    }
+    
+    function showInput() {
+        let investigatorList = []
+        investigatorResult = ""
+        let investigatorDropdownSelection = document.getElementById("investigatorCountDropdown")
+        let investigatorCount = investigatorDropdownSelection.options[investigatorDropdownSelection.selectedIndex].text
+
+        if (document.getElementById("seasonOneInvestigators_checkbox").checked) {
+            var i 
+            for (i = 0; i < seasonOneInvestigators.length; i++) {
+                investigatorList.push(seasonOneInvestigators[i])       
+            } 
+        }
+
+        if (document.getElementById("seasonTwoInvestigators_checkbox").checked) {
+            var i
+            for (i = 0; i < seasonTwoInvestigators.length; i++) {
+                investigatorList.push(seasonTwoInvestigators[i])
+            }
+        }
+        
+        var i
+        for (i = 0; i < investigatorCount; i++) {
+            var rand = Math.floor(Math.random()*investigatorList.length)
+            var num = investigatorList[rand]
+            investigatorList.splice(rand,1) 
+            investigatorResult += num + "<br/>" 
+        }
+        
+        /* investigatorList.sort(() => Math.random() - 0.5)
+        var i
+        for (i = 0; i < investigatorCount; i++) {
+            investigatorResult += investigatorList[i] + "<br/>"
+        } */
+        
+        if (investigatorList.length < investigatorCount - 1) {
+            investigatorResult = "Not enough investigators chosen!"
+        }
+
+        document.getElementById("display").innerHTML = investigatorResult
+    }
+
+  </script>
+
+  </head>
+<body>
+
+  <form>
+    <input type="checkbox" name="seasonOneInvestigators" id="seasonOneInvestigators_checkbox">Season One Investigators<br/>
+    <input type="checkbox" name="seasonTwoInvestigators" id="seasonTwoInvestigators_checkbox">Season Two Investigators<br/>
+    Team Size
+    <select id="investigatorCountDropdown">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+  </form>
+
+  <input type="submit" value="Create Team" onclick="showInput();"><br/>
+  <label>Your input: </label> 
+  <p><span id='display'></span></p>
+</body>
+</html>

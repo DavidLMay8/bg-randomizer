@@ -206,83 +206,99 @@
         document.getElementById("elderOne").innerHTML = elderOneResult
     }
 
+    function checkall_investigators(source, type) {
+        checkboxes = document.getElementsByClassName('investigator_checkbox');
+        for(var i=0, n=checkboxes.length; i<n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
+    function checkall_seasonOne(source) {
+        checkboxes = document.getElementsByClassName('seasonOne_checkbox');
+        for(var i=0, n=checkboxes.length; i<n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
   </script>
 
   </head>
 <body>
-  <h1>Cthulhu: Death May Die Randomizer</h1>
-  <p>Use the Randomizer to create your team of investigators and face off against a powerful Elder One in an exciting episode of <b>Cthulhu: Death May Die!</b></p>
-  <p>Note: Unspeakable Box Elder Ones includes Yog-Sothoth.</p>
-  <form>
-    <table class="table" id="setupTable">
-        <tr>
-            <th>Expansion</th>
-            <th>Investigators</th>
-            <th>Episodes</th>
-            <th>Elder Ones</th>
-        </tr>
-        <tr>
-            <td class="data">Season 1</td>
-            <td class="data"><input type="checkbox" name="seasonOneInvestigators" id="seasonOneInvestigators_checkbox" class="investigator_checkbox seasonOne_checkbox"> Include</td>
-            <td class="data"><input type="checkbox" name="seasonOneEpisodes" id="seasonOneEpisodes_checkbox"> Include</td>
-            <td class="data"><input type="checkbox" name="seasonOneElerOnes" id="seasonOneElderOnes_checkbox"> Include</td>
-        </tr>
-        <tr>
-            <td class="data">Season 2</td>
-            <td class="data"><input type="checkbox" name="seasonTwoInvestigators" id="seasonTwoInvestigators_checkbox"> Include</td>
-            <td class="data"><input type="checkbox" name="seasonTwoEpisodes" id="seasonTwoEpisodes_checkbox"> Include</td>
-        </tr>
-        <tr>
-            <td class="data">Unspeakable Box</td>
-            <td class="data"><input type="checkbox" name="unspeakableInvestigators" id="unspeakableInvestigators_checkbox"> Include</td>
-            <td class="data"><input type="checkbox" name="unspeakableEpisodes" id="unspeakableEpisodes_checkbox"> Include</td>
-            <td class="data"><input type="checkbox" name="unspeakableElderOnes" id="unspeakableElderOnes_checkbox"> Include</td>
-        </tr>
-        <tr>
-            <td class="data">Black Goat of the Woods</td>
-            <td></td>
-            <td></td>
-            <td class="data"><input type="checkbox" name="blackGoat" id="blackGoat_checkbox"> Include</td>
-        </tr>
-        <tr>
-            <td class="data">Yog-Sothoth</td>
-            <td></td>
-            <td></td>
-            <td class="data"><input type="checkbox" name="yogSothoth" id="yogSothoth_checkbox"> Include</td>
-        </tr>
-        <tr>
-            <td class="data">Scarlett Hayes</td>
-            <td class="data"><input type="checkbox" name="scarlettHayes" id="scarlettHayes_checkbox"> Include</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class="data">R'lyeh Rising</td>
-            <td></td>
-            <td class="data"><input type="checkbox" name="rlyehRisingEpisode" id="rlyehRisingEpisode_checkbox"> Include</td>
-            <td></td>>
-        </tr>
-</table>
-    <p>
-        Team Size
-        <select id="investigatorCountDropdown">
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </p>
-  </form>
+    <h2><a href="index.html">Home</a></h2>
+    <h1>Cthulhu: Death May Die Randomizer</h1>
+    <p>Use the Randomizer to create your team of investigators and face off against a powerful Elder One in an exciting episode of <b>Cthulhu: Death May Die!</b></p>
+    <p>Note: Unspeakable Box Elder Ones includes Yog-Sothoth.</p>
+    
+    <form>
+        <table class="table" id="setupTable">
+            <tr>
+                <th>Expansion</th>
+                <th><input type="checkbox" name="checkAllInvestigators" id="checkAllInvestigators_checkbox" class="checkall_investigators" onclick="checkall_investigators(this);"> Investigators</th>
+                <th><input type="checkbox" name="checkAllSeasonOne" id="checkallSeasonOne_checkbox" class="checkall_seasonOne" onclick="checkall_seasonOne(this);"> Episodes</th>
+                <th>Elder Ones</th>
+            </tr>
+            <tr>
+                <td class="data"><input type="checkbox" name="checkAllSeasonOne" id="checkallSeasonOne_checkbox" class="checkall_seasonOne" onclick="checkall_seasonOne(this);">  Season 1</td>
+                <td class="data"><input type="checkbox" name="seasonOneInvestigators" id="seasonOneInvestigators_checkbox" class="investigator_checkbox seasonOne_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="seasonOneEpisodes" id="seasonOneEpisodes_checkbox" class="episode_checkbox seasonOne_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="seasonOneElerOnes" id="seasonOneElderOnes_checkbox" class="elderOne_checkbox seasonOne_checkbox"> Include</td>
+            </tr>
+            <tr>
+                <td class="data"><input type="checkbox" name="checkAllSeasonOne" id="checkallSeasonOne_checkbox" class="checkall_seasonOne" onclick="checkall_seasonTwo(this);"> Season 2</td>
+                <td class="data"><input type="checkbox" name="seasonTwoInvestigators" id="seasonTwoInvestigators_checkbox" class="investigator_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="seasonTwoEpisodes" id="seasonTwoEpisodes_checkbox"> Include</td>
+            </tr>
+            <tr>
+                <td class="data">Unspeakable Box</td>
+                <td class="data"><input type="checkbox" name="unspeakableInvestigators" id="unspeakableInvestigators_checkbox" class="investigator_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="unspeakableEpisodes" id="unspeakableEpisodes_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="unspeakableElderOnes" id="unspeakableElderOnes_checkbox"> Include</td>
+            </tr>
+            <tr>
+                <td class="data">Black Goat of the Woods</td>
+                <td></td>
+                <td></td>
+                <td class="data"><input type="checkbox" name="blackGoat" id="blackGoat_checkbox"> Include</td>
+            </tr>
+            <tr>
+                <td class="data">Yog-Sothoth</td>
+                <td></td>
+                <td></td>
+                <td class="data"><input type="checkbox" name="yogSothoth" id="yogSothoth_checkbox"> Include</td>
+            </tr>
+            <tr>
+                <td class="data">Scarlett Hayes</td>
+                <td class="data"><input type="checkbox" name="scarlettHayes" id="scarlettHayes_checkbox" class="investigator_checkbox"> Include</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="data">R'lyeh Rising</td>
+                <td></td>
+                <td class="data"><input type="checkbox" name="rlyehRisingEpisode" id="rlyehRisingEpisode_checkbox"> Include</td>
+                <td></td>
+            </tr>
+    </table>
+        <p>
+            Team Size
+            <select id="investigatorCountDropdown">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </p>
+    </form>
 
-  <input type="submit" value="Create Team" onclick="showInput();"><br/>
+    <input type="submit" value="Create Team" onclick="showInput();"><br/>
 
-  <div class="text-center" id="resultDiv" style="width: 50%; margin: auto; padding: 10px; text-align: center;">
-    <h1>NOW PLAYING</h1>
-    <p><h1>CTHULHU: DEATH MAY DIE</h1></p>
-    <p><h2><span id="episode"></span></h2></p>
-    <p><span id="investigators"></span></p>
-    <p>Versus:</p>
-    <p><b><span id="elderOne"></span></b></p>
-</div>
+    <div class="text-center" id="resultDiv" style="width: 50%; margin: auto; padding: 10px; text-align: center;">
+        <h1>NOW PLAYING</h1>
+        <p><h1>CTHULHU: DEATH MAY DIE</h1></p>
+        <p><h2><span id="episode"></span></h2></p>
+        <p><span id="investigators"></span></p>
+        <p>Versus:</p>
+        <p><b><span id="elderOne"></span></b></p>
+    </div>
 </body>
 </html>

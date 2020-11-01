@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <style>
+      table, th, td.data {
+          border: 1px solid black;
+      }
+  </style>
+  <script language="JavaScript">
+    let investigatorCount
+    let investigatorList = []
+    let investigatorResult = ""
+    let seasonOneInvestigators = [
+        "Ahmed (S1)",
+        "Fatima (S1)",
+        "Ian (S1)",
+        "The Kid (S1)",
+        "Rasputin (S1)",
+        "Borden (S1)",
+        "Morgan (S1)",
+        "Sister Beth (S1)",
+        "Elizabeth (S1)",
+        "Adam (S1)"
+
+    ]
+    let seasonTwoInvestigators = [
+        "Adilah (S2)",
+        "Luke (S2)",
+        "Mary (S2)",
+        "Mario (S2)",
+        "Alex (S2)",
+        "Sam (S2)",
+        "Tony (S2)",
+        "Hailia (S2)",
+        "Margarethe (S2)",
+        "Ariele (S2)"
+    ]
+    let unspeakableInvestigators = [
+        "Julia (UN)",
+        "Al (UN)",
+        "Richard (UN)",
+        "Maki (UN)",
+        "Tina (UN)",
+        "Fleur (UN)",
+        "Maxim (UN)",
+        "Roxie (UN)",
+        "Margie (UN)",
+        "Meryl (UN)",
+        "Pops (UN)",
+        "Walter (UN)",
+        "Vincent (UN)",
+        "Gonk (UN)",
+        "Josephine (UN)",
+        "Bert (UN)",
+        "Ernest (UN)",
+        "Olivia (UN)"
+    ]
+    let scarlettHayes = ["Scarlett Hayes (PR)"]
+
+    let episodeCount
+    let episodeList = []
+    let episodeResult = ""
+    let seasonOneEpisodes = [
+        "Season 1, Episode 1 - Blasphemous Alchemy",
+        "Season 1, Episode 2 - Tomes of Madness",
+        "Season 1, Episode 3 - Danse Macabre",
+        "Season 1, Episode 4 - Eldritch Idols",
+        "Season 1, Episode 5 - Accursed Tide",
+        "Season 1, Episode 6 - Unspeakable Hour"
+    ]
+    let seasonTwoEpisodes = [
+        "Season 2, Episode 1 - Strange Bedfellows",
+        "Season 2, Episode 2 - Nameless Woods",
+        "Season 2, Episode 3 - Sanctificetur Nomen",
+        "Season 2, Episode 4 - Shootout at the H.P. Corral",
+        "Season 2, Episode 5 - Monsters in Sin City",
+        "Season 2, Episode 6 - Endgame"
+    ]
+    let unspeakableEpisodes = [
+        "Lost Episode 1 - Speak Fhtagn or Die!",
+        "Lost Episode 2 - Bright Lights, Big Monsters",
+        "Lost Episode 3 - Happy Birthday"
+    ]
+    let rlyehRisingEpisode = ["Epic Episode - R'lyeh Rising"]
+
+    let elderOneList = []
+    let elderOneResult = ""
+    let seasonOneElderOnes = [
+        "Cthulhu", 
+        "Hastur"
+    ]
+    let unspeakableElderOnes = [
+        "Dagon",
+        "Yog-Sothoth",
+    ]
+    let blackGoat = ["Black Goat of the Woods"]
+    let yogSothoth = ["Yog-Sothoth"]
+
+    // Create investigator pool.
+    function addInvestigators(x) {
+        var i 
+        for (i = 0; i < x.length; i++) {
+            investigatorList.push(x[i])
+        } 
+    }
+
+    // Create episode pool.
+    function addEpisodes(x) {
+        var i
+        for (i = 0; i < x.length; i++) {
+            episodeList.push(x[i])
+        }
+    }
+
+    // Create elder one pool.
+    function addElderOnes(x) {
+        var i
+        for (i = 0; i < x.length; i++) {
+            elderOneList.push(x[i])
+        }
+    }
+    
+    function showInput() {
+        investigatorList = []
+        episodeList = []
+        elderOneList = []
+        let totalCount = 0
+        investigatorResult = ""
+        episodeResult = ""
+        elderOneResult = ""
+        let investigatorDropdownSelection = document.getElementById("investigatorCountDropdown")
+        let investigatorCount = investigatorDropdownSelection.options[investigatorDropdownSelection.selectedIndex].text
+
+        // Add investigators to the investigator pool based on checked boxes.
+        if (document.getElementById("seasonOneInvestigators_checkbox").checked) {
+            addInvestigators(seasonOneInvestigators)
+        }
+        if (document.getElementById("seasonTwoInvestigators_checkbox").checked) {
+            addInvestigators(seasonTwoInvestigators)
+        }
+        if (document.getElementById("unspeakableInvestigators_checkbox").checked) {
+            addInvestigators(unspeakableInvestigators)
+        }
+        if (document.getElementById("scarlettHayes_checkbox").checked) {
+            addInvestigators(scarlettHayes)
+        }
+
+        // Add episodes to the episode pool based on checked boxes.
+        if (document.getElementById("seasonOneEpisodes_checkbox").checked) {
+            addEpisodes(seasonOneEpisodes)
+        }
+        if (document.getElementById("seasonTwoEpisodes_checkbox").checked) {
+            addEpisodes(seasonTwoEpisodes)
+        }
+        if (document.getElementById("unspeakableEpisodes_checkbox").checked) {
+            addEpisodes(unspeakableEpisodes)
+        }
+        if (document.getElementById("rlyehRisingEpisode_checkbox").checked) {
+            addEpisodes(rlyehRisingEpisode)
+        }
+
+        // Add elder ones to the elder one pool based on checked boxes.
+        if (document.getElementById("seasonOneElderOnes_checkbox").checked) {
+            addElderOnes(seasonOneElderOnes)
+        }
+        if (document.getElementById("unspeakableElderOnes_checkbox").checked) {
+            addElderOnes(unspeakableElderOnes)
+        }
+        if (document.getElementById("blackGoat_checkbox").checked) {
+            addElderOnes(blackGoat)
+        }
+        if (document.getElementById("yogSothoth_checkbox").checked) {
+            addElderOnes(yogSothoth)
+        }
+
+        totalCount = investigatorList.length // Count the number of investigators available before they get removed from the array so we can warn if the team will be larger than the available investigators.
+        
+        var i
+        for (i = 0; i < investigatorCount; i++) {
+            var rand = Math.floor(Math.random()*investigatorList.length)
+            var num = investigatorList[rand]
+            investigatorList.splice(rand,1) 
+            investigatorResult += num + "<br/>" 
+        }
+        if (totalCount < investigatorCount) {
+            investigatorResult = "Not enough investigators!"
+        }
+        document.getElementById("investigators").innerHTML = investigatorResult
+
+        var randEpisode = Math.floor(Math.random()*episodeList.length)
+        episodeResult = episodeList[randEpisode]
+        if (episodeList.length < 1) {
+            episodeResult = "No episodes selected!"
+        }
+        document.getElementById("episode").innerHTML = episodeResult
+
+        var randElderOne = Math.floor(Math.random()*elderOneList.length)
+        elderOneResult = elderOneList[randElderOne]
+        if (elderOneList < 1) {
+            elderOneResult = "No Elder Ones selected!"
+        }
+        if (episodeResult == "Epic Episode - R'lyeh Rising") {
+            elderOneResult = "Cthulhu (R'lyeh Rising)"
+        }
+        document.getElementById("elderOne").innerHTML = elderOneResult
+    }
+
+  </script>
+
+  </head>
+<body>
+  <h1>Cthulhu: Death May Die Randomizer</h1>
+  <p>Use the Randomizer to create your team of investigators and face off against a powerful Elder One in an exciting episode of <b>Cthulhu: Death May Die!</b></p>
+  <p>Note: Unspeakable Box Elder Ones includes Yog-Sothoth.</p>
+  <form>
+    <table class="table" id="setupTable">
+        <tr>
+            <th>Expansion</th>
+            <th>Investigators</th>
+            <th>Episodes</th>
+            <th>Elder Ones</th>
+        </tr>
+        <tr>
+            <td class="data">Season 1</td>
+            <td class="data"><input type="checkbox" name="seasonOneInvestigators" id="seasonOneInvestigators_checkbox" class="investigator_checkbox seasonOne_checkbox"> Include</td>
+            <td class="data"><input type="checkbox" name="seasonOneEpisodes" id="seasonOneEpisodes_checkbox"> Include</td>
+            <td class="data"><input type="checkbox" name="seasonOneElerOnes" id="seasonOneElderOnes_checkbox"> Include</td>
+        </tr>
+        <tr>
+            <td class="data">Season 2</td>
+            <td class="data"><input type="checkbox" name="seasonTwoInvestigators" id="seasonTwoInvestigators_checkbox"> Include</td>
+            <td class="data"><input type="checkbox" name="seasonTwoEpisodes" id="seasonTwoEpisodes_checkbox"> Include</td>
+        </tr>
+        <tr>
+            <td class="data">Unspeakable Box</td>
+            <td class="data"><input type="checkbox" name="unspeakableInvestigators" id="unspeakableInvestigators_checkbox"> Include</td>
+            <td class="data"><input type="checkbox" name="unspeakableEpisodes" id="unspeakableEpisodes_checkbox"> Include</td>
+            <td class="data"><input type="checkbox" name="unspeakableElderOnes" id="unspeakableElderOnes_checkbox"> Include</td>
+        </tr>
+        <tr>
+            <td class="data">Black Goat of the Woods</td>
+            <td></td>
+            <td></td>
+            <td class="data"><input type="checkbox" name="blackGoat" id="blackGoat_checkbox"> Include</td>
+        </tr>
+        <tr>
+            <td class="data">Yog-Sothoth</td>
+            <td></td>
+            <td></td>
+            <td class="data"><input type="checkbox" name="yogSothoth" id="yogSothoth_checkbox"> Include</td>
+        </tr>
+        <tr>
+            <td class="data">Scarlett Hayes</td>
+            <td class="data"><input type="checkbox" name="scarlettHayes" id="scarlettHayes_checkbox"> Include</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="data">R'lyeh Rising</td>
+            <td></td>
+            <td class="data"><input type="checkbox" name="rlyehRisingEpisode" id="rlyehRisingEpisode_checkbox"> Include</td>
+            <td></td>>
+        </tr>
+</table>
+    <p>
+        Team Size
+        <select id="investigatorCountDropdown">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </p>
+  </form>
+
+  <input type="submit" value="Create Team" onclick="showInput();"><br/>
+
+  <div class="text-center" id="resultDiv" style="width: 50%; margin: auto; padding: 10px; text-align: center;">
+    <h1>NOW PLAYING</h1>
+    <p><h1>CTHULHU: DEATH MAY DIE</h1></p>
+    <p><h2><span id="episode"></span></h2></p>
+    <p><span id="investigators"></span></p>
+    <p>Versus:</p>
+    <p><b><span id="elderOne"></span></b></p>
+</div>
+</body>
+</html>

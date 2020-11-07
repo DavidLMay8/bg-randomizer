@@ -122,6 +122,7 @@
     }
     
     function showInput() {
+        document.getElementById("resultDiv").style="width: 50%; margin: auto; padding: 10px; text-align: center;"
         investigatorList = []
         episodeList = []
         elderOneList = []
@@ -213,10 +214,50 @@
         }
     }
 
+    function checkall_episodes(source, type) {
+        checkboxes = document.getElementsByClassName('episode_checkbox');
+        for(var i=0, n=checkboxes.length; i<n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
+    function checkall_elderOnes(source, type) {
+        checkboxes = document.getElementsByClassName('elderOne_checkbox');
+        for(var i=0, n=checkboxes.length; i<n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+        uncheck_yogSothoth()
+    }
+
     function checkall_seasonOne(source) {
         checkboxes = document.getElementsByClassName('seasonOne_checkbox');
         for(var i=0, n=checkboxes.length; i<n; i++) {
             checkboxes[i].checked = source.checked;
+        }
+    }
+
+    function checkall_seasonTwo(source) {
+        checkboxes = document.getElementsByClassName('seasonTwo_checkbox');
+        for(var i=0, n=checkboxes.length; i<n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
+    function checkall_unspeakable(source) {
+        checkboxes = document.getElementsByClassName('unspeakable_checkbox');
+        for(var i=0, n=checkboxes.length; i<n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
+    // If Unspeakable Box Elder Ones is checked, Yog-Sothoth should be unchecked
+    function uncheck_yogSothoth() {
+        if (document.getElementById("unspeakableElderOnes_checkbox").checked) {
+            document.getElementById("yogSothoth_checkbox").checked = false
+            document.getElementById("yogSothoth_checkbox").disabled = true
+        }
+        else {
+            document.getElementById("yogSothoth_checkbox").disabled = false
         }
     }
 
@@ -234,8 +275,8 @@
             <tr>
                 <th>Expansion</th>
                 <th><input type="checkbox" name="checkAllInvestigators" id="checkAllInvestigators_checkbox" class="checkall_investigators" onclick="checkall_investigators(this);"> Investigators</th>
-                <th><input type="checkbox" name="checkAllSeasonOne" id="checkallSeasonOne_checkbox" class="checkall_seasonOne" onclick="checkall_seasonOne(this);"> Episodes</th>
-                <th>Elder Ones</th>
+                <th><input type="checkbox" name="checkAllEpisodes" id="checkallEpisodes_checkbox" class="checkall_episodes" onclick="checkall_episodes(this);"> Episodes</th>
+                <th><input type="checkbox" name="checkAllElderOnes" id="checkallElderOnes_checkbox" class="checkall_elderOnes" onclick="checkall_elderOnes(this);">Elder Ones</th>
             </tr>
             <tr>
                 <td class="data"><input type="checkbox" name="checkAllSeasonOne" id="checkallSeasonOne_checkbox" class="checkall_seasonOne" onclick="checkall_seasonOne(this);">  Season 1</td>
@@ -244,27 +285,27 @@
                 <td class="data"><input type="checkbox" name="seasonOneElerOnes" id="seasonOneElderOnes_checkbox" class="elderOne_checkbox seasonOne_checkbox"> Include</td>
             </tr>
             <tr>
-                <td class="data"><input type="checkbox" name="checkAllSeasonOne" id="checkallSeasonOne_checkbox" class="checkall_seasonOne" onclick="checkall_seasonTwo(this);"> Season 2</td>
-                <td class="data"><input type="checkbox" name="seasonTwoInvestigators" id="seasonTwoInvestigators_checkbox" class="investigator_checkbox"> Include</td>
-                <td class="data"><input type="checkbox" name="seasonTwoEpisodes" id="seasonTwoEpisodes_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="checkAllSeasonTwo" id="checkallSeasonTwo_checkbox" class="checkall_seasonTwo" onclick="checkall_seasonTwo(this);"> Season 2</td>
+                <td class="data"><input type="checkbox" name="seasonTwoInvestigators" id="seasonTwoInvestigators_checkbox" class="investigator_checkbox seasonTwo_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="seasonTwoEpisodes" id="seasonTwoEpisodes_checkbox" class="episode_checkbox seasonTwo_checkbox"> Include</td>
             </tr>
             <tr>
-                <td class="data">Unspeakable Box</td>
-                <td class="data"><input type="checkbox" name="unspeakableInvestigators" id="unspeakableInvestigators_checkbox" class="investigator_checkbox"> Include</td>
-                <td class="data"><input type="checkbox" name="unspeakableEpisodes" id="unspeakableEpisodes_checkbox"> Include</td>
-                <td class="data"><input type="checkbox" name="unspeakableElderOnes" id="unspeakableElderOnes_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="checkAllUnspeakable" id="checkallUnspeakable_checkbox" class="checkall_unspeakable" onclick="checkall_unspeakable(this);">Unspeakable Box</td>
+                <td class="data"><input type="checkbox" name="unspeakableInvestigators" id="unspeakableInvestigators_checkbox" class="investigator_checkbox unspeakable_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="unspeakableEpisodes" id="unspeakableEpisodes_checkbox" class="episode_checkbox unspeakable_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="unspeakableElderOnes" id="unspeakableElderOnes_checkbox" class="elderOne_checkbox unspeakable_checkbox" onclick="uncheck_yogSothoth();"> Include</td>
             </tr>
             <tr>
                 <td class="data">Black Goat of the Woods</td>
                 <td></td>
                 <td></td>
-                <td class="data"><input type="checkbox" name="blackGoat" id="blackGoat_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="blackGoat" id="blackGoat_checkbox" class="elderOne_checkbox"> Include</td>
             </tr>
             <tr>
                 <td class="data">Yog-Sothoth</td>
                 <td></td>
                 <td></td>
-                <td class="data"><input type="checkbox" name="yogSothoth" id="yogSothoth_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="yogSothoth" id="yogSothoth_checkbox" class="elderOne_checkbox"> Include</td>
             </tr>
             <tr>
                 <td class="data">Scarlett Hayes</td>
@@ -275,7 +316,7 @@
             <tr>
                 <td class="data">R'lyeh Rising</td>
                 <td></td>
-                <td class="data"><input type="checkbox" name="rlyehRisingEpisode" id="rlyehRisingEpisode_checkbox"> Include</td>
+                <td class="data"><input type="checkbox" name="rlyehRisingEpisode" id="rlyehRisingEpisode_checkbox" class="episode_checkbox"> Include</td>
                 <td></td>
             </tr>
     </table>
@@ -291,8 +332,7 @@
     </form>
 
     <input type="submit" value="Create Team" onclick="showInput();"><br/>
-
-    <div class="text-center" id="resultDiv" style="width: 50%; margin: auto; padding: 10px; text-align: center;">
+    <div class="text-center" id="resultDiv" style="display:none;">
         <h1>NOW PLAYING</h1>
         <p><h1>CTHULHU: DEATH MAY DIE</h1></p>
         <p><h2><span id="episode"></span></h2></p>

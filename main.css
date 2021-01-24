@@ -1,0 +1,21 @@
+body {
+    background-image: url("images/background.png");
+    color: white;
+}
+@font-face {
+    font-family: Grotto;
+    src: url(fonts/Grotto.ttf)
+}
+@font-face {
+    font-family: Sunset Boulevard;
+    src: url(fonts/Sunset\ Boulevard.otf);
+}
+.nowPlaying {
+    font-family: Grotto;
+}
+.sunsetBoulevard {
+    font-family: Sunset Boulevard;
+}
+table, th, td.data {
+    border: 1px solid black;
+}

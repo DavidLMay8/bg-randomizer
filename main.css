@@ -1,6 +1,52 @@
 body {
+    margin: 0;
     background-image: url("images/background.png");
+    background-size: cover;
     color: white;
+}
+h1 {
+    font-family: Sunset Boulevard;
+}
+.topbar {
+    background-image: url("images/topbar.png");
+    background-size: cover;
+    height: 63px;
+    overflow: hidden;
+}
+.topbar-icon {
+    float: left;
+    padding: 14px 14px;
+}
+.topbar-icons:hover {
+    background-color: black;
+}
+.sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 63;
+    left: 0;
+}
+.sidebar-button {
+    background-image: url("images/unselected-button.png");
+    background-size: cover;
+    width: 160px;
+    height: 65px;
+    color: white;
+    text-align: center;
+    line-height: 65px;
+    font-family: American Typewriter, serif;
+    font-size: 18px;
+}
+.sidebar-button:focus {
+    background-image: url("images/selected-button.png");
+    color: black;
+}
+.main {
+    margin-left: 160px;
+    padding-left: 20px;
+    text-align: center;
 }
 @font-face {
     font-family: Grotto;
@@ -10,12 +56,34 @@ body {
     font-family: Sunset Boulevard;
     src: url(fonts/Sunset\ Boulevard.otf);
 }
+@font-face {
+    font-family: American Typewriter;
+    src: url(fonts/American\ Typewriter\ Regular.ttf);
+}
 .nowPlaying {
     font-family: Grotto;
 }
 .sunsetBoulevard {
     font-family: Sunset Boulevard;
 }
+.american-typewriter {
+    font-family: American Typewriter;
+}
+.results {
+    color: black;
+    background-image: url('images/results-background.png'); 
+    background-repeat: no-repeat; 
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: auto;
+    width: 1000px;
+    height: 1000px;
+}
 table, th, td.data {
     border: 1px solid black;
+    margin: auto;
+    text-align: center;
 }

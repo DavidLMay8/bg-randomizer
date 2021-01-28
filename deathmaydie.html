@@ -11,7 +11,7 @@
     </div>
     <div class="sidebar">
         <button value="Collection" class="sidebar-button" id="collectionButton" onclick="collapseResults();">Collection</button>
-        <button class="sidebar-button" id="teamButton" onclick="collapseCollection();showInput();">Create Team</button>
+        <button class="sidebar-button" id="teamButton" onclick="collapseCollection();showInput();">Start Episode</button>
         <img src="images/dmd-logo.png" alt="Cthulhu: Death May Die" style="margin-left: 25px; position: absolute; top: 50%; left: 0%;">
     </div>
     <div class="main">
@@ -39,6 +39,7 @@
                         <td class="data"><input type="checkbox" name="checkAllSeasonTwo" id="checkallSeasonTwo_checkbox" class="checkall_seasonTwo" onclick="checkall_seasonTwo(this);"> Season 2</td>
                         <td class="data"><input type="checkbox" name="seasonTwoInvestigators" id="seasonTwoInvestigators_checkbox" class="investigator_checkbox seasonTwo_checkbox"> Include</td>
                         <td class="data"><input type="checkbox" name="seasonTwoEpisodes" id="seasonTwoEpisodes_checkbox" class="episode_checkbox seasonTwo_checkbox"> Include</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td class="data"><input type="checkbox" name="checkAllUnspeakable" id="checkallUnspeakable_checkbox" class="checkall_unspeakable" onclick="checkall_unspeakable(this);">Unspeakable Box</td>
@@ -86,10 +87,10 @@
         <!-- <input type="submit" value="Create Team" onclick="showInput();"><br/> -->
         <div class="text-center" id="resultDiv" style="display: none;">
             <div class="text-center results" id="resultDetails">
-                <h1 class="nowPlaying">NOW PLAYING</h1>
-                <p><h1 class="sunsetBoulevard">CTHULHU: DEATH MAY DIE</h1></p>
-                <p><h2 class="sunsetBoulevard"><span id="episode"></span></h2></p>
-                <p><span class="sunsetBoulevard" id="investigators"></span></p>
+                <p class="nowPlaying">NOW PLAYING</p>
+                <p class="sunsetBoulevard">CTHULHU: DEATH MAY DIE</p>
+                <p class="sunsetBoulevard" id="episode"></p>
+                <p class="sunsetBoulevard" id="investigators"></p>
                 <p>Versus:</p>
                 <p><b><span id="elderOne"></span></b></p>
             </div>

@@ -2,27 +2,42 @@
 <html>
   <head lang="en">
   <meta charset="UTF-8">
-  <style>
-      table, th, td.data {
-          border: 1px solid black;
-      }
-  </style>
-  <body>
-    <form>
-        <table>
-            <tr>
-                <th>Expansion</th>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-        </table>
-    </form>
-
-    <script language="JavaScript">
-        data = "test"
-        document.getElementById("demo").innerHTML = data
-    </script>
-  </body>
+  <link rel="stylesheet" href="deathmaydie-style.css">
   </head>
+<body>
+    <div class="topbar">
+        <input type="image" class="topbar-icon" src="images/hamburger-icon.png" style="height: 35px;"/>
+        <a href="index.html" class="topbar-icon"><img src="images/home-icon.png" alt="Home" style="width: 40px;"></a>
+    </div>
+    <div class="sidebar">
+        <button value="Collection" class="sidebar-button" id="collectionButton" onclick="collapseResults();">Collection</button>
+        <button class="sidebar-button" id="teamButton" onclick="createDungeon();">Conduct Chalice Ritual</button>
+        <button class="sidebar-button" id="saveButton" onclick="">Return to the Dream</button>
+        <!-- <img src="images/dmd-logo.png" alt="Cthulhu: Death May Die" style="margin-left: 25px; position: absolute; top: 50%; left: 0%;"> -->
+    </div>
+    <div class="main">
+        <div class="collection" id="collectionDiv">
+            <div class="banner-image">
+                <div class="banner-text">
+                    Bloodborne: The Board Game
+                </div>
+            </div>
+            <form>
+                <input type="checkbox">Core Box <br/>
+                <input type="checkbox">Blood Moon Box <br/>
+                <input type="checkbox">Chalice Dungeon <br/>
+                <input type="checkbox">Forsaken Cainhurst Castle <br/>
+                <input type="checkbox">Cainhurst Extra <br/>
+                <input type="checkbox">Forbidden Woods <br/>
+                <input type="checkbox">Byrgenwerth <br/>
+                <input type="checkbox">Upper Cathedral Ward <br/>
+                <input type="checkbox">Yahar'gul, Unseen Village <br/>
+                <input type="checkbox">Mergo's Loft <br/>
+                <input type="checkbox">The Hunter's Dream <br/>
+                <input type="checkbox">Hunter's Dream Extras <br/>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="bloodborne-dungeon.js" type="text/javascript"></script>
 </html>

@@ -15,49 +15,49 @@ let seasonOneInvestigators = [
 
 ]
 let seasonTwoInvestigators = [
-    "Adilah (S2)",
-    "Luke (S2)",
-    "Mary (S2)",
-    "Mario (S2)",
-    "Alex (S2)",
-    "Sam (S2)",
-    "Tony (S2)",
-    "Hailia (S2)",
-    "Margarethe (S2)",
-    "Ariele (S2)"
+    "Adilah",
+    "Luke",
+    "Mary",
+    "Mario",
+    "Alex",
+    "Sam",
+    "Tony",
+    "Hailia",
+    "Margarethe",
+    "Ariele"
 ]
 let unspeakableInvestigators = [
-    "Julia (UN)",
-    "Al (UN)",
-    "Richard (UN)",
-    "Maki (UN)",
-    "Tina (UN)",
-    "Fleur (UN)",
-    "Maxim (UN)",
-    "Roxie (UN)",
-    "Margie (UN)",
-    "Meryl (UN)",
-    "Pops (UN)",
-    "Walter (UN)",
-    "Vincent (UN)",
-    "Gonk (UN)",
-    "Josephine (UN)",
-    "Bert (UN)",
-    "Ernest (UN)",
-    "Olivia (UN)"
+    "Julia",
+    "Al",
+    "Richard",
+    "Maki",
+    "Tina",
+    "Fleur",
+    "Maxim",
+    "Roxie",
+    "Margie",
+    "Meryl",
+    "Pops",
+    "Walter",
+    "Vincent",
+    "Gonk",
+    "Josephine",
+    "Bert",
+    "Ernest",
+    "Olivia"
 ]
-let scarlettHayes = ["Scarlett Hayes (PR)"]
+let scarlettHayes = ["Scarlett Hayes"]
 
 let episodeCount
 let episodeList = []
 let episodeResult = ""
 let seasonOneEpisodes = [
-    "Season One Episode One Blasphemous Alchemy.",
-    "Season One Episode Two Tomes of Madness.",
-    "Season One. Episode Three. Danse Macabre.",
-    "Season One. Episode Four. Eldritch Idols.",
-    "Season One. Episode Five. Accursed Tide.",
-    "Season One. Episode Six. Unspeakable Hour."
+    "Season One<br>Episode One<br>Blasphemous Alchemy",
+    "Season One<br>Episode Two<br>Tomes of Madness",
+    "Season One<br>Episode Three<br>Danse Macabre",
+    "Season One<br>Episode Four<br>Eldritch Idols",
+    "Season One<br>Episode Five<br>Accursed Tide",
+    "Season One<br>Episode Six<br>Unspeakable Hour"
 ]
 let seasonTwoEpisodes = [
     "Season Two. Episode One - Strange Bedfellows",

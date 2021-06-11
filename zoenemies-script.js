@@ -35,7 +35,7 @@ function generate() {
 
 // Infected values
 infected_hp = 1;
-infected_agility = 4;
+infected_agility = 2;
 infected_dt = 5;
 
 // Survivor values
@@ -45,7 +45,7 @@ survivor_dt = 3;
 
 // Militia values
 militia_hp = 5;
-militia_agility = 2;
+militia_agility = 4;
 militia_dt = 4;
 
 function rollStats(character) {

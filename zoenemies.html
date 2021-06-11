@@ -5,19 +5,67 @@
   <link rel="stylesheet" href="deathmaydie-style.css">
   </head>
   <body>
-      <div class="text-center">Infected</div>
-      <table class="table" id="infected_matrix">
+    <div class="topbar">
+        <input type="image" class="topbar-icon" src="images/hamburger-icon.png" style="height: 35px;"/>
+        <a href="index.html" class="topbar-icon"><img src="images/home-icon.png" alt="Home" style="width: 40px;"></a>
+    </div>
+    <div class="sidebar">
+        <button value="Collection" class="sidebar-button" id="collectionButton" onclick="collapseResults();">Collection</button>
+        <button class="sidebar-button" id="teamButton" onclick="collapseCollection();showInput();">Start Episode</button>
+        <img src="" alt="Zombicide Outbreak" style="margin-left: 25px; position: absolute; top: 50%; left: 0%;">
+    </div>
+    <div class="main">
+        <div>
+            <button onclick="addEnemy();">Add Enemy</button>
+            <!-- <select id="enemyType">
+                <option value="infected">Infected</option>
+            </select> -->
+        </div>
+        <div id="add_enemies"></div>
+        <div id="encounter_button">
+            <button id="generate_encounter" onclick="generate();">Generate Encounter</button>
+        </div>
+        <div id="encounter"></div>
+        <!-- <div class="sunsetBoulevard">Infected</div>
+        <table class="table" id="infected_matrix">
           <tr>
               <th>Skill Matrix</th>
-              <td>Athletics</td>
-              <td>Attitude</td>
-              <td>Resolve</td>
-              <td>Combat</td>
-              <td>Perception</td>
-              <td>Survival</td>
+              <th>Athletics<br>1</th>
+              <th>Attitude<br>-</th>
+              <th>Resolve<br>-</th>
+              <th>Combat<br>3</th>
+              <th>Perception<br>2</th>
+              <th>Survival<br>3</th>
           </tr>
           <tr>
-              <td>Muscle</td>
+              <th>Muscle 3</th>
+              <td>Agility</td>
+              <td>Intimidation</td>
+              <td>Constitution</td>
+              <td>Melee</td>
+              <td>Navigation</td>
+              <td>Scavenging</td>
           </tr>
-      </table>
+          <tr>
+              <th>Brains 1</th>
+              <td>Stealth</td>
+              <td>Persuasion</td>
+              <td>Willpower</td>
+              <td>Ranged</td>
+              <td>Evaluation</td>
+              <td>Crafting</td>
+           </tr>
+           <tr>
+              <th>Grit 2</th>
+              <td>Endurance</td>
+              <td>Morale</td>
+              <td>Perseverance</td>
+              <td>Evasion</td>
+              <td>Awareness</td>
+              <td>Medicine</td>
+           </tr>
+        </table>
+    </div> -->
   </body>
+  <script src="zoenemies-script.js" type="text/javascript"></script>
+</html>

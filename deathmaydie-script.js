@@ -140,6 +140,26 @@ function toggleCollapse() {
     }
 }
 
+function loadCookies() {
+    var data = document.cookie.split("=");
+    for (var i=0; i<data.length; i++) {
+        document.getElementById(data[i]).checked = true;
+    }
+    alert(document.cookie + "should be checked");
+}
+
+function saveCollection() {
+    var checkboxes = document.getElementsByName("dmdcheckbox");
+    var checkboxesChecked = [];
+    for (var i=0; i<checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            checkboxesChecked.push(checkboxes[i].id);
+        }
+    }
+    document.cookie = "checkboxSettings=" + checkboxesChecked +"; max-age=60*60*24*365";
+    alert(checkboxesChecked);
+}
+
 function showInput() {
     document.getElementById("resultDiv").style="display: block;"
     investigatorList = []

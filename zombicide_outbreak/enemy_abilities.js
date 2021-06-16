@@ -101,7 +101,7 @@ function inputUpgrade(upgrade) {
         case "vomit":
             cost = "5"
             type = "Ability"
-            effect = "For every 3 points of difference between the Glutton's Initiative and that of the next character this round, Evacuation gets +1🟥."
+            effect = "For every 3 points of difference between the Glutton's Initiative and that of its target, Evacuation gets +1🟥."
             break;
         case "wail":
             cost = "5"

@@ -42,6 +42,7 @@ function generate() {
         // Create initiative values for enemies
         let stats_array = inputStats(enemy_value, i);
         let rules = inputRules(enemy_value);
+        let upgrades = inputUpgrades(enemy_value)
 
         // Make HTML for enemy list
         enemy_list.push("<div id='enemy_" + i + "' style='display: table;'>" +
@@ -54,9 +55,9 @@ function generate() {
         "<b>Defense:</b> " + stats_array[3] +
         "<p><b>Melee:</b> <input type='number' size='3' value='" + stats_array[4] + "'> | " +
         "<b>Ranged:</b> <input type='number' size='3' value='" + stats_array[5] + "'></div>" +
-        "<div style='display: table-cell; width: 400px; padding-left: 50px; padding-right: 50px;'><p><h2><b>Special Rules</b></h2> " + rules + "</div>" +
-        "<div style='display: table-cell; width: 400px; padding-left: 50px; padding-right: 50px;'><p><h2><b>Attacks</b></h2> " + stats_array[6] + "</div>" +
-        "<div style='display: table-cell; width: 400px; padding-left: 50px; padding-right: 50px;'><p><h2><b>Abilities & Upgrades</b></h2> " + stats_array[7] +
+        "<div style='display: table-cell; width: 200px; padding-left: 50px; padding-right: 50px;'><p><h2><b>Special Rules</b></h2> " + rules + "</div>" +
+        "<div style='display: table-cell; width: 300px; padding-left: 50px; padding-right: 50px;'><p><h2><b>Attacks</b></h2> " + stats_array[6] + "</div>" +
+        "<div style='display: table-cell; width: 300px; padding-left: 50px; padding-right: 50px;'><p><h2><b>Abilities & Upgrades</b></h2> " + upgrades +
         "<div id='upgradedef_" + i + "'></div></div>"
         );
     }
@@ -64,12 +65,12 @@ function generate() {
     document.getElementById("encounter").innerHTML = str_list;
 
     // Show default upgrade
-    for(i = 1; i < enemy_no+1; i++) {
-        // Get upgrades select element id and value
-        let current_select = document.getElementById("upgrades_" + i);
-        let current_value = current_select.value;
-        changeUpgrade(current_select, current_value);
-    }
+    // for(i = 1; i < enemy_no+1; i++) {
+    //     // Get upgrades select element id and value
+    //     let current_select = document.getElementById("upgrades_" + i);
+    //     let current_value = current_select.value;
+    //     changeUpgrade(current_select, current_value);
+    // }
 }
 
 // Set upgrade information

@@ -28,12 +28,10 @@ function inputStats(enemy, iter) {
             agility = 2;
             dt = 5;
             hp = 1;
-            defense = "None"
+            defense = 0;
             melee = 4;
             ranged = 0;
-            attacks = "<b>Stun:</b> 🟢-Target suffers -2d6 to their Initiative next round." +
-            "<p><b>Bash:</b> 🟢🟢-🟥 Bludgeoning";
-            upgrades = BansheeUpgrades(iter);
+            attacks = stun + bash;
             break;
         case "glutton":
             agility = 1;
@@ -42,11 +40,7 @@ function inputStats(enemy, iter) {
             defense = "🟥 Bludgeoning, Thermal, Electrical"
             melee = 7;
             ranged = 0;
-            attacks = "<b>Body Slam:</b> 🟢-🟥🟥 Bludgeoning" +
-            "<p><b>Evacuation:</b> 🟢🟢- Target in Grapple range suffers Viral(1) and Squalor. The GM may make a free Encounter check." +
-            "<p><b>Gouge:</b> 🟢🟢-🟥 Slashing" +
-            "<p><b>Bite:</b> 🟢🟢🟢⚠️⚠️⚠️-🟥🟥🟥 Slashing, Viral(1)";
-            upgrades = GluttonUpgrades(iter);
+            attacks =  body_slam + evacuation + gouge + bite
             break;
         case "infected":
             agility = 2;
@@ -55,30 +49,25 @@ function inputStats(enemy, iter) {
             defense = "🟥 Bludgeoning"
             melee = 6;
             ranged = 0;
-            attacks = "<b>Slam:</b> 🟢-🟥 Bludgeoning" +
-            "<p><b>Gouge:</b> 🟢🟢-🟥 Slashing" +
-            "<p><b>Bite:</b> 🟢🟢🟢⚠️⚠️⚠️-🟥🟥🟥 Slashing, Viral(1)";
-            upgrades = InfectedUpgrades(iter);
+            attacks = slam + gouge + bite;
             break;
-        case "Militia":
+        case "militia":
             agility = 4;
             dt = 4;
             hp = 5;
-            defense = "TBD"
+            defense = "🟥 Bludgeoning"
             melee = 6;
             ranged = 5;
             attacks = "TBD";
-            upgrades = "TBD";
             break;
-        case "Survivor":
+        case "survivor":
             agility = 3;
             dt = 3;
             hp = 3;
-            defense = "TBD"
+            defense = "0"
             melee = 3;
             ranged = 5;
             attacks = "TBD";
-            upgrades = SurvivorUpgrades(iter);
             break;
     }
     init_ceiling = agility * 6;
@@ -86,5 +75,21 @@ function inputStats(enemy, iter) {
     dt_ceiling = dt * 3;
     dt_res = Math.floor(Math.random() * (dt_ceiling - dt)) + dt;
 
-    return [init_res, dt_res, hp, defense, melee, ranged, attacks, upgrades];
+    return [init_res, dt_res, hp, defense, melee, ranged, attacks];
 }
+
+// List of attacks
+
+var bash = "<p><b>Bash:</b> 🟢🟢-🟥 Bludgeoning"
+
+var bite = "<p><b>Bite:</b> 🟢🟢🟢⚠️⚠️⚠️-🟥🟥🟥 Slashing, Viral 1"
+
+var body_slam = "<b>Body Slam:</b> 🟢-🟥🟥 Bludgeoning"
+
+var evacuation = "<p><b>Evacuation:</b> 🟢🟢- Target in melee range suffers Viral 1 and Squalor. The GM may make a free Encounter check."
+
+var gouge = "<p><b>Gouge:</b> 🟢🟢-🟥 Slashing"
+
+var slam = "<b>Slam:</b> 🟢-🟥 Bludgeoning"
+
+var stun = "<b>Stun:</b> 🟢-Target suffers -2d6 to their Initiative next round."

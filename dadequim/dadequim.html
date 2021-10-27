@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./dadequim-style.css">
+  </head>
+  <body>
+    <div class="topbar">
+        <input type="image" class="topbar-icon" src="../images/hamburger-icon.png" style="height: 35px;"/>
+        <a href="../index.html" class="topbar-icon"><img src="../images/home-icon.png" alt="Home" style="width: 40px;"></a>
+    </div>
+    <div class="sidebar">
+        <button value="addEnemy" class="sidebar-button" id="addButton" onclick="translate();">Translate</button>
+        <!-- <button class="sidebar-button" id="generateButton" onclick="generate();">Generate Encounter</button> -->
+        <img src="" alt="Dadequim" style="margin-left: 25px; position: absolute; top: 50%; left: 0%;">
+    </div>
+    <div class="main" style="text-align: left; float: left; padding-top: 30px; padding-left: 50px;">
+        <div id="english_input">
+            <textarea rows="5" cols="50" id="english_text" oninput="translate();"></textarea>
+        </div>
+        <div>
+            <p id="dadequim_display" class="dadequimText">Hey Cam whats up</p>
+        </div>
+  </body>
+  <script src="dadequim_translate.js" type="text/javascript"></script>
+</html>

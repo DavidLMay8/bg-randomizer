@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./zombicideoutbreak-style.css">
+  </head>
+  <body>
+    <div class="topbar">
+        <input type="image" class="topbar-icon" src="../images/hamburger-icon.png" style="height: 35px;"/>
+        <a href="../index.html" class="topbar-icon"><img src="../images/home-icon.png" alt="Home" style="width: 40px;"></a>
+    </div>
+    <div class="sidebar">
+        <button type="submit" form="characterSheet" value="addEnemy" class="sidebar-button" id="addButton">Save Character Sheet</button>
+        <input type="file" id="loadCharacter" hidden />
+        <label for="loadCharacter" class="uploadButton">Load Character Sheet</label>
+        <!-- <button class="sidebar-button" id="generateButton" onclick="generate();">Generate Encounter</button> -->
+        <img src="" alt="Zombicide Outbreak" style="margin-left: 25px; position: absolute; top: 50%; left: 0%;">
+    </div>
+    <div class="main" style="text-align: left; float: left; padding-top: 30px; padding-left: 50px;">
+        <form id="characterSheet">
+            <div id="summary" style="float: left; background-color: darkgrey; margin: 10px; padding: 10px; border-radius: 25px;">
+                <h1 style="text-align: center;">Summary</h1>
+                <label for="name">Name:</label> 
+                <input type="text" id="name" name="name" class="formInput">
+                <label for="age">Age:</label> 
+                <input type="text" id="age" name="age" size="4" class="formInput"><br />
+                <label for="player">Player:</label> 
+                <input type="text" id="player" name="player" class="formInput">
+                <label for="height">Height:</label>  
+                <input type="text" id="height" name="height" size="6" class="formInput"><br />
+                <label for="campaign">Campaign:</label>
+                <input type="text" id="campaign" name="campaign" class="formInput">
+                <label for="weight">Weight:</label> 
+                <input type="text" id="weight" name="weight" size="6" class="formInput"><br />
+                <label for="bio">Bio:</label> 
+                <textarea form="characterSheet" id="bio" name="bio" style="margin-right: 10px;"></textarea>
+                <label for="survival">Survival:</label> 
+                <input type="number" id="survival" name="survival" size="4" class="formInput">
+            </div>
+            <div id="vitality" style="float: right; background-color: darkgrey; margin: 10px; padding: 10px; border-radius: 25px;">
+                <h1 style="text-align: center;">Vitality</h1>
+                <div id="injuries">
+                    <h2 style="text-align: left;">Injuries</h2>
+                    <hr />
+                    <input type="number" size="2" name="injury_1_magnitude" id="injuryMag1">
+                    <input type="text" id="injuryName1" name="injury_1_name">
+                    <input type="number" size="2" name="injury_1_allocation_1" id="injury1Alloc1">
+                    <input type="number" size="2" name="injury_1_allocation_2" id="injury1Alloc2">
+                    <input type="number" size="2" name="injury_1_allocation_3" id="injury1Alloc3">
+                    <input type="number" size="2" name="injury_1_allocation_4" id="injury1Alloc4">
+                    <input type="number" size="2" name="injury_1_allocation_5" id="injury1Alloc5">
+                    <hr />
+                    <input type="number" size="2" name="injury_2_magnitude" id="injuryMag2">
+                    <input type="text" id="injuryName2">
+                    <input type="number" size="2" name="injury_2_allocation_1" id="injury2Alloc1">
+                    <input type="number" size="2" name="injury_2_allocation_2" id="injury2Alloc2">
+                    <input type="number" size="2" name="injury_2_allocation_3" id="injury2Alloc3">
+                    <input type="number" size="2" name="injury_2_allocation_4" id="injury2Alloc4">
+                    <input type="number" size="2" name="injury_2_allocation_5" id="injury2Alloc5">
+                    <hr />
+                    <input type="number" size="2" name="injury_3_magnitude" id="injuryMag3">
+                    <input type="text" id="injuryName3">
+                    <input type="number" size="2" name="injury_3_allocation_1" id="injury3Alloc1">
+                    <input type="number" size="2" name="injury_3_allocation_2" id="injury3Alloc2">
+                    <input type="number" size="2" name="injury_3_allocation_3" id="injury3Alloc3">
+                    <input type="number" size="2" name="injury_3_allocation_4" id="injury3Alloc4">
+                    <input type="number" size="2" name="injury_3_allocation_5" id="injury3Alloc5">
+                    <hr />
+                    <input type="number" size="2" name="injury_4_magnitude" id="injuryMag4">
+                    <input type="text" id="injuryName4">
+                    <input type="number" size="2" name="injury_4_allocation_1" id="injury4Alloc1">
+                    <input type="number" size="2" name="injury_4_allocation_2" id="injury4Alloc2">
+                    <input type="number" size="2" name="injury_4_allocation_3" id="injury4Alloc3">
+                    <input type="number" size="2" name="injury_4_allocation_4" id="injury4Alloc4">
+                    <input type="number" size="2" name="injury_4_allocation_5" id="injury4Alloc5">
+                    <hr />
+                    <input type="number" size="2" name="injury_5_magnitude" id="injuryMag5">
+                    <input type="text" id="injuryName5">
+                    <input type="number" size="2" name="injury_5_allocation_1" id="injury5Alloc1">
+                    <input type="number" size="2" name="injury_5_allocation_2" id="injury5Alloc2">
+                    <input type="number" size="2" name="injury_5_allocation_3" id="injury5Alloc3">
+                    <input type="number" size="2" name="injury_5_allocation_4" id="injury5Alloc4">
+                    <input type="number" size="2" name="injury_5_allocation_5" id="injury5Alloc5">
+                    <hr />
+                    <div id="stress" style="float: left; margin-right: 30px;">
+                        <label for="stressCurrent"><h3 style="margin-bottom: 0px;">Stress</h3></label>
+                        <input type="number" id="stressCurrent" name="current_stress" size="3"> / <input type="number" id="stressMax" name="max_stress" size="3">
+                    </div>                    
+                    <div id="stress" style="float: left; margin-right: 30px;">
+                        <label for="damageCurrent"><h3 style="margin-bottom: 0px;">Damage</h3> </label>
+                        <input type="number" id="damageCurrent" name="current_damage" size="3"> / <input type="number" id="damageMax" name="max_damage" size="3">
+                    </div>
+                    <div id="wounds" style="float: left; margin-right: 30px; margin-bottom: 30px;">
+                        <label for="wounds"><h3 style="margin-bottom: 0px;">Wounds</h3> </label>
+                        <input type="number" id="wounds" name="wounds" size="3">
+                    </div>
+                    <div id="damageAllocations" style="margin-top: 30px; text-align: center;">
+                        <label for="damageAlloc1"><h3 style="margin-bottom: 0px;">Damage Allocations</h3></label>
+                        <input type="number" size="2" id="damageAlloc1" name="damage_allocation_1">
+                        <input type="number" size="2" id="damageAlloc2" name="damage_allocation_2">
+                        <input type="number" size="2" id="damageAlloc3" name="damage_allocation_3">
+                        <input type="number" size="2" id="damageAlloc4" name="damage_allocation_4">
+                        <input type="number" size="2" id="damageAlloc5" name="damage_allocation_5">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- <button type="submit">Save Character Sheet</button>
+                <input type="file" id="loadFile" /> -->
+            </div>
+        </form>
+    </div>
+  </body>
+  <script src="character_sheet.js" type="text/javascript"></script>
+</html>

@@ -151,6 +151,29 @@ td {
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+
+  .formInput {
+      margin-bottom: 35px;
+      margin-right: 10px;
+  }
+
+  .uploadButton {
+    background-image: url("../images/unselected-button.png");
+    background-size: 375px;
+    background-repeat: no-repeat;
+    border: none;
+    width: 375px;
+    height: 157px;
+    color: white;
+    text-align: center;
+    line-height: 65px;
+    font-family: American Typewriter;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    display: inline-block;
+  }
 /* table, th, td.data {
     border: 1px solid black;
     margin: auto;

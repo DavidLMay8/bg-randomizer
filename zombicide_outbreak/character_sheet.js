@@ -27,6 +27,19 @@ function download(filename, text) {
     document.body.removeChild(element);
   }
 
+  
+function textReplace(element) {
+    var terms = ['/success/', '/failure/', '/survival/', '/skill/', '/mastery/', '/difficulty/', '/depletion/', '/damage/', '/risk/', '/stress/'];
+    var replacements = ['🟢', '🔴', '🔶', '🟩', '🟦', '⬛️', '⬜', '🟥', '⚠', '💢'];
+
+    for(var i = 0; i < replacements.length; i++) {
+        var originalText = document.getElementById(element).value;
+        var re = new RegExp(terms[i], 'g');
+        var newText = originalText.replace(re, replacements[i]);
+        document.getElementById(element).value = newText;
+    }
+}
+
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
 
@@ -62,6 +75,19 @@ const streamToText = async (blob) => {
         }
     }
     })();
-
-    
   });
+
+  function changeStyle(style) {
+    var sel = window.getSelection(); // Gets selection
+    if (sel.rangeCount) {
+      // Creates a new element, and insert the selected text with the chosen style
+      var e = document.createElement('span');
+      e.classList.add(style.value); // Selected style (class)
+      e.innerHTML = sel.toString(); // Selected text
+  
+      // https://developer.mozilla.org/en-US/docs/Web/API/Selection/getRangeAt
+      var range = sel.getRangeAt(0);
+      range.deleteContents(); // Deletes selected text…
+      range.insertNode(e); // … and inserts the new element at its place
+    }
+  }

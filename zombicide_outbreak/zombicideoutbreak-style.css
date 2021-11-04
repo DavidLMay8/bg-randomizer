@@ -12,17 +12,29 @@
 }
 body {
     margin: 0;
-    background-image: url("../images/background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(white, gray);
     color: white;
 }
-/* h1 {
-    font-family: Sunset Boulevard;
-} */
+.column {
+    float: left;
+    width: 50%;
+}
+.row {
+    display: flex;
+}
+.section {
+    flex: 50%;
+    color: black;
+    background-color: white;
+    margin: 10px; 
+    padding: 10px; 
+    border-radius: 25px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
 .topbar {
     background-image: url("../images/topbar.png");
-    background-size: cover;
     height: 63px;
     overflow: hidden;
 }
@@ -62,7 +74,11 @@ body {
 }
 .main {
     margin-left: 375px;
-    text-align: center;
+    text-align: left; 
+    float: center; 
+    width: 50%; 
+    padding-top: 30px; 
+    padding-left: 50px;
 }
 .banner-image {
     background-image: url("../images/banner.png");
@@ -173,6 +189,30 @@ td {
     border-radius: 0.3rem;
     padding: 0.5rem;
     display: inline-block;
+  }
+
+  .editable {
+    width: 360px;
+    height: 120px;
+    border: 1px solid #ccc
+  }
+  
+  .editable .span-0{ /* Added to reset styles correctly */
+    font-weight: normal;   /* Reset b */
+    text-decoration: none; /* Reset u */
+    font-style: normal;    /* Reset i */
+  }
+  
+  .editable .span-b{
+    font-weight: bold;
+  }
+  
+  .editable .span-u{
+    text-decoration: underline;
+  }
+  
+  .editable .span-i{
+    font-style: italic;
   }
 /* table, th, td.data {
     border: 1px solid black;

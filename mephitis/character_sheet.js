@@ -9,9 +9,10 @@ function handleSubmit(event) {
     console.log({ formJSON });
 
     const charName = data.get('name');
+    var date = new Date().toLocaleString();
     const results = JSON.stringify(formJSON, null, 2);
 
-    download(charName + '.json', results);
+    download(charName + "_" + date + '.json', results);
 }
 
 function download(filename, text) {
@@ -38,6 +39,23 @@ function textReplace(element) {
         var newText = originalText.replace(re, replacements[i]);
         document.getElementById(element).value = newText;
     }
+}
+
+function changeName() {
+  var targetDiv = document.getElementById('nameEdit');
+  if (targetDiv.style.visibility !== "hidden") {
+    targetDiv.style.visibility = "hidden";
+  } else {
+    targetDiv.style.visibility = "visible";
+  }
+}
+
+function saveName() {
+  var name = document.getElementById('name').value;
+  if (name.length == 0) {
+    name = 'Summary';
+  } 
+  document.getElementById('nameHeading').innerHTML = name;
 }
 
 const form = document.querySelector('form');
@@ -74,6 +92,7 @@ const streamToText = async (blob) => {
             document.getElementsByName(key)[0].value = obj[key];
         }
     }
+    saveName();
     })();
   });
 

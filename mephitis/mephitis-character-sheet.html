@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./zombicideoutbreak-style.css">
   </head>
-  <body>
+  <body onload="saveName();">
     <div class="topbar">
         <input type="image" class="topbar-icon" src="../images/hamburger-icon.png" style="height: 35px;"/>
         <a href="../index.html" class="topbar-icon"><img src="../images/home-icon.png" alt="Home" style="width: 40px;"></a>
@@ -20,9 +20,12 @@
         <form id="characterSheet">
             <div class="row">
                 <div id="summary" class="section">
-                    <h1 style="text-align: center;">Summary</h1>
-                    <label for="name">Name:</label> 
-                    <input type="text" id="name" name="name" class="formInput">
+                    <h1 id="nameHeading" onclick="changeName();" class="buttonText" style="text-align: center; text-decoration: underline;">Summary</h1>
+                    <div id="nameEdit" style="visibility: hidden;">
+                        <label for="name">Name:</label> 
+                        <input type="text" id="name" name="name" class="formInput name">
+                        <a class="buttonText" onclick="saveName();"><b>Save</b></a>
+                    </div>
                     <label for="age">Age:</label> 
                     <input type="text" id="age" name="age" size="4" class="formInput"><br />
                     <label for="player">Player:</label> 

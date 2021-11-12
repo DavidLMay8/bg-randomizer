@@ -1,0 +1,59 @@
+p {
+    font-family: komet-sc, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: #7F7F7F;
+}
+
+a:link {
+    color: #7F7F7F;
+}
+
+a:visited {
+    color: #7F7F7F;
+}
+
+a:hover {
+    color: #F98509;
+}
+
+table, th, td {
+    font-family: komet-sc, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.navbar {
+    font-family: bc-alphapipe, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16pt;
+    color: #7F7F7F;
+    height: 96px;
+    border-bottom: 1px solid #E0E0E0;
+    white-space: nowrap;
+}
+
+.navbar img {
+    margin-top: 18px;
+    float: left;
+}
+
+.navbar a {
+    margin-left: 8%;
+    margin-top: 33px;
+    float: left;
+}
+
+#login {
+    margin-top: 5px;
+    margin-right: 5%;
+    float: right;
+}

@@ -75,8 +75,8 @@ h1 {
     flex: 50%;
     color: black;
     background-color: white;
-    margin: 10px; 
-    box-shadow: 0px 8px 10px #7F7F7F;
+    margin: 15px; 
+    box-shadow: 1px 1px 4px #3C3C3C;
     height: 100%;
     padding-bottom: 10px;
 }
@@ -96,7 +96,7 @@ h1 {
 
 .section p {
     padding-left: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
@@ -137,7 +137,7 @@ h1 {
 
 /* On mouse-over, add a grey background color */
 .check-container:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #E0E0E0;
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -197,6 +197,22 @@ button {
     font-weight: 200;
     font-style: normal;
     letter-spacing: 2.25px;
+    border-radius:5px;
+    box-shadow: 1px 1px 4px #3C3C3C;
+    border: 0;
+    padding: 8px;
+    margin-top:5px
+}
+.action-button {
+    font-size: 22pt; 
+    font-family: bc-alphapipe; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top:20px;
+    border-radius:5px;
+    box-shadow: 1px 1px 4px #7F7F7F;
+    border: 0;
+    padding: 10px; 
 }
 
 table, th, td {

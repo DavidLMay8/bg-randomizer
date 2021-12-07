@@ -1,6 +1,16 @@
 table, th, td {
     border: 1px solid black;
 }
+
+h2, h3, h4 {
+  margin-left: 10px;
+}
+
+p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
  /* The sidebar menu */
  .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -43,8 +53,7 @@ table, th, td {
   /* Style page content */
   .main {
     margin-left: 300px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-    margin-right: 300px;
+    padding: 0px;
     /* font-family: komet-sc, sans-serif;
     font-weight: 200;
     font-style: normal; */

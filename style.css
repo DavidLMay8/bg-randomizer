@@ -201,7 +201,8 @@ button {
     box-shadow: 1px 1px 4px #3C3C3C;
     border: 0;
     padding: 8px;
-    margin-top:5px
+    margin-top: 5px;
+    cursor: pointer;
 }
 .action-button {
     font-size: 22pt; 

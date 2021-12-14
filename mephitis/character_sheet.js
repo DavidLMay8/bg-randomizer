@@ -48,6 +48,12 @@ function changeName() {
   } else {
     targetDiv.style.visibility = "visible";
   }
+  var buttonText = document.getElementById('manageButton')
+  if (buttonText.innerHTML == "Manage") {
+    buttonText.innerHTML = "Done";
+  } else {
+    buttonText.innerHTML = "Manage";
+  }
 }
 
 function saveName() {

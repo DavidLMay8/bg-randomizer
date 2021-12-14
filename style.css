@@ -118,12 +118,17 @@ a:hover {
     color: #FFFFFF;
 }
 
+.section h3 {
+    font-family: bc-alphapipe, sans-serif;
+}
+
 .section h2:hover {
     color: #F98509;
 }
 
 .section p {
     padding-left: 10px;
+    padding-right: 10px;
     margin-top: 15px;
     margin-bottom: 10px;
 }
@@ -229,6 +234,21 @@ button {
     box-shadow: 1px 1px 4px #7F7F7F;
     border: 0;
     padding: 10px; 
+}
+
+.upload-button {
+        background-color: #F98509;
+        color: #FFFFFF;
+        font-family: komet-sc, sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        letter-spacing: 2.25px;
+        border-radius:5px;
+        box-shadow: 1px 1px 4px #3C3C3C;
+        border: 0;
+        padding: 8px;
+        margin-top: 5px;
+        cursor: pointer;
 }
 
 table, th, td {

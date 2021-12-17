@@ -1,3 +1,43 @@
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, set } from "firebase/database";
+
+// Set the configuration for your app
+// TODO: Replace with your project's config object
+const firebaseConfig = {
+
+  apiKey: "AIzaSyBXvrufeUiTGRaUwOHiogzIFDpjkR_zDjA",
+
+  authDomain: "bg-configurator.firebaseapp.com",
+
+  projectId: "bg-configurator",
+
+  storageBucket: "bg-configurator.appspot.com",
+
+  messagingSenderId: "218160021830",
+
+  appId: "1:218160021830:web:0c6347c0f53be185576547",
+
+  measurementId: "G-BWJMSPWHPH"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+// Get a reference to the database service
+const database = getDatabase(app);
+
+
+function writeUserData(userId, name, email, imageUrl) {
+  const db = getDatabase();
+  set(ref(db, 'users/' + userId), {
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+}
+
+
+
 function handleSubmit(event) {
     event.preventDefault();
 

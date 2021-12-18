@@ -22,8 +22,7 @@
     <div class="title">
         <h1 id="nameHeading"></h1>
     </div>
-    <button id="manageButton" value="Manage" onclick="changeName();" style="margin-right: 10px; margin-bottom: 10px;">Manage</button>
-    <div class="main" style="margin-left: auto; margin-right: auto;">
+    <div class="main" style="display: inline-block; text-align: center;">
         <!-- <div class="row">
             <button type="submit" form="characterSheet" value="addEnemy" class="sidebar-button" id="addButton">Save Character Sheet</button>
             <input type="file" id="loadCharacter" hidden />
@@ -31,14 +30,13 @@
         </div> -->
         <form id="characterSheet">
             <div class="row">
-                <div id="nameEdit" style="visibility: hidden; float: right;">
+                <div id="nameEdit">
+                    <p>
+                        
+                    </p>
                     <button type="submit" form="characterSheet" value="addEnemy" class="sidebar-button" id="addButton">Save Character Sheet</button>
                     <input type="file" id="loadCharacter" hidden />
                     <label for="loadCharacter" class="upload-button">Load Character Sheet</label>
-                    <p>
-                        <label for="name">Change Name</label> 
-                        <input type="text" id="name" name="name" class="formInput name" onchange="saveName();"><br />
-                    </p>
                 </div>
             </div>
             <div class="row">
@@ -46,10 +44,10 @@
                     <h2>Summary</h2>                        
                     <p>
                         <div id="playerDiv" style="float: left; margin-left: 10px; margin-right: 30px;">
+                            <label for="name"><h3 style="margin-bottom: 0px;">Name</h3></label> 
+                            <input type="text" id="name" name="name" class="formInput name" onchange="saveName();"><br />
                             <label for="player"><h3 style="margin-bottom: 0px;">Player</h3></label>
-                            <input type="text" id="player" name="player" size="4" class="formInput">
-                        </div>
-                        <div id="playerDiv" style="float: left; margin-left: 10px; margin-right: 30px;">
+                            <input type="text" id="player" name="player" class="formInput">
                             <label for="campaign"><h3 style="margin-bottom: 0px;">Campaign</h3></label>
                             <input type="text" id="campaign" name="campaign" class="formInput">
                         </div>
@@ -68,6 +66,8 @@
                         
                     </p>
                 </div>
+            </div>
+            <div class="row">
                 <div id="vitality" class="section">
                     <!-- <h1 style="text-align: center;">Vitality</h1> -->
                     <h2>Vitality</h2>
@@ -96,6 +96,8 @@
                         <input type="text" size="2" id="damageAlloc5" name="damage_allocation_5">
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div id="injuries" class="section">
                     <h2>Injuries</h2>
                         <p>
@@ -150,6 +152,17 @@
                 </div>
             </div>
             <div class="row">
+                <div id="illness" class="section">
+                    <h2>Illness</h2>
+                    <h3 style="margin-bottom: 0px;">Illness Magnitude</h2>
+                    <input type="text" name="viral" size="2">
+                    <h3 style="margin-bottom: 0px;">Symptoms</h3>
+                    <textarea id="symptoms" name="symptoms" rows="2" cols="30"></textarea>
+                    <h3 style="margin-bottom: 0px;">Disadvantages & Coping Mechanisms</h3>
+                    <textarea id="disadvantage" name="disadvantage" rows="10" cols="30" oninput="textReplace(this.id);"></textarea>
+                </div>
+            </div>
+            <div class="row">
                 <div id="abilities" class="section">
                     <h2>Abilities</h2>
                     <textarea id="ability-text" name="abilities" rows="50" cols="50" onInput="textReplace(this.id);" style="float: left;"></textarea>
@@ -171,15 +184,6 @@
                             /stress/ = 💢
                         </p>
                     </div>
-                </div>
-                <div id="illness" class="section">
-                    <h2>Illness</h2>
-                    <h3 style="margin-bottom: 0px;">Illness Magnitude</h2>
-                    <input type="text" name="viral" size="2">
-                    <h3 style="margin-bottom: 0px;">Symptoms</h3>
-                    <textarea id="symptoms" name="symptoms" rows="2" cols="30"></textarea>
-                    <h3 style="margin-bottom: 0px;">Disadvantages & Coping Mechanisms</h3>
-                    <textarea id="disadvantage" name="disadvantage" rows="10" cols="30" oninput="textReplace(this.id);"></textarea>
                 </div>
             </div>
         </form>

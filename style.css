@@ -9,6 +9,12 @@ p {
     font-style: normal;
 }
 
+textarea {
+    font-family: komet-sc, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
 .title {
   background-color: #3D5BA6; 
     height: 80pt; 
@@ -237,18 +243,19 @@ button {
 }
 
 .upload-button {
-        background-color: #F98509;
-        color: #FFFFFF;
-        font-family: komet-sc, sans-serif;
-        font-weight: 200;
-        font-style: normal;
-        letter-spacing: 2.25px;
-        border-radius:5px;
-        box-shadow: 1px 1px 4px #3C3C3C;
-        border: 0;
-        padding: 8px;
-        margin-top: 5px;
-        cursor: pointer;
+    font-size: 10pt;    
+    background-color: #F98509;
+    color: #FFFFFF;
+    font-family: komet-sc, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: 2.25px;
+    border-radius:5px;
+    box-shadow: 1px 1px 4px #3C3C3C;
+    border: 0;
+    padding: 8px;
+    margin-top: 5px;
+    cursor: pointer;
 }
 
 table, th, td {

@@ -40,6 +40,14 @@ textarea {
     
 }
 
+.tab-active {
+    display: block;
+}
+
+.tab-inactive {
+    display: none;
+}
+
 li {
     padding-top:40px
 }
@@ -120,16 +128,8 @@ a:hover {
     padding-bottom: 10px;
 }
 
-.section h2 {
-    color: #FFFFFF;
-}
-
 .section h3 {
     font-family: bc-alphapipe, sans-serif;
-}
-
-.section h2:hover {
-    color: #F98509;
 }
 
 .section p {

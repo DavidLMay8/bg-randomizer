@@ -64,6 +64,15 @@ function saveName() {
   document.getElementById('nameHeading').innerHTML = name;
 }
 
+function toggleActive(id) {
+  var items = document.getElementsByClassName('tab-active');
+  for (var i=0; i < items.length; i++) {
+    items[i].classList.replace('tab-active', 'tab-inactive');
+  }
+  element = document.getElementById(id);
+  element.classList.replace('tab-inactive', 'tab-active');
+}
+
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
 

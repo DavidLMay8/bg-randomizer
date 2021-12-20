@@ -2,10 +2,15 @@
 <html>
   <head lang="en">
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="https://use.typekit.net/shm6xuk.css">
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/shm6xuk.css" />
   </head>
   <body onload="saveName();">
+    <!-- <script type="text/javascript" >
+        $(document).ready(function() {
+           $(".markItUp").markItUp(mySettings);
+        });
+    </script> -->
     <div id="nav-bar" class="navbar">
         <img src="../images/logo.png" alt="BGC logo" style="margin-left: 10%;" width="165px">
         <a href="../index.html">Home</a>
@@ -23,183 +28,192 @@
         <h1 id="nameHeading" style="text-align: center;"></h1>
     </div>
     <div class="main" style="text-align: center;">
-        <!-- <div class="row">
-            <button type="submit" form="characterSheet" value="addEnemy" class="sidebar-button" id="addButton">Save Character Sheet</button>
-            <input type="file" id="loadCharacter" hidden />
-            <label for="loadCharacter" class="upload-button">Load Character Sheet</label>
-        </div> -->
+        <div id="tabButtons" style="margin: auto;">
+            <button onclick="toggleActive('characterTab');">Character</button>
+            <button onclick="toggleActive('skillsTab');">Skills & Abilities</button>
+            <button onclick="toggleActive('inventoryTab');">Inventory</button>
+        </div>
         <form id="characterSheet" style="display: inline-block;">
-            <div class="row">
-                <div id="nameEdit">
-                    <button type="submit" form="characterSheet" value="addEnemy" id="saveButton">Save Character Sheet</button>
-                    <input type="file" id="loadCharacter" hidden />
-                    <label for="loadCharacter" class="upload-button">Load Character Sheet</label>
-                </div>
-            </div>
-            <div class="row">
-                <div id="summary" class="section">
-                    <h2>Summary</h2>                        
-                    <p>
-                        <div id="playerDiv" style="float: left; margin-left: 10%; margin-right: 30px;">
-                            <label for="name"><h3 style="margin-bottom: 0px;">Name</h3></label> 
-                            <input type="text" id="name" name="name" class="formInput name" onchange="saveName();"><br />
-                            <label for="player"><h3 style="margin-bottom: 0px;">Player</h3></label>
-                            <input type="text" id="player" name="player" class="formInput">
-                            <label for="campaign"><h3 style="margin-bottom: 0px;">Campaign</h3></label>
-                            <input type="text" id="campaign" name="campaign" class="formInput">
+        <!-- Character Summary Tab     -->
+            <div id="characterTab" class="tab-active">
+                <div class="row">
+                    <div id="summarySection" class="section">
+                        <h2>Summary</h2>                        
+                        <div id="playerSummary" class="row">
+                            <div id="playerInfo" style="float: left; margin-left: auto; margin-right: 30px">
+                                <p>
+                                    <label for="name"><h3 style="margin-bottom: 0px;">Name</h3></label> 
+                                    <input type="text" id="name" name="name" class="formInput name" onchange="saveName();"><br />
+                                    <label for="player"><h3 style="margin-bottom: 0px;">Player</h3></label>
+                                    <input type="text" id="player" name="player" class="formInput">
+                                    <label for="campaign"><h3 style="margin-bottom: 0px;">Campaign</h3></label>
+                                    <input type="text" id="campaign" name="campaign" class="formInput">
+                                </p>
+                            </div>
+                            <p>
+                                <div id="physical" style="float: left; margin-right: auto;">
+                                    <label for="age"><h3 style="margin-bottom: 0px;">Age</h3></label> 
+                                    <input type="text" id="age" name="age" size="4" class="formInput">
+                                    <label for="height"><h3 style="margin-bottom: 0px;">Height</h3></label>  
+                                    <input type="text" id="height" name="height" size="6" class="formInput">
+                                    <label for="weight"><h3 style="margin-bottom: 0px;">Weight</h3></label> 
+                                    <input type="text" id="weight" name="weight" size="6" class="formInput">
+                                </div>                      
+                            </p>
                         </div>
-                    </p>
-                    <p>
-                        <div id="physical" style="float: left; margin-left: 10px; margin-right: 30px;">
-                            <label for="age"><h3 style="margin-bottom: 0px;">Age</h3></label> 
-                            <input type="text" id="age" name="age" size="4" class="formInput">
-                            <label for="height"><h3 style="margin-bottom: 0px;">Height</h3></label>  
-                            <input type="text" id="height" name="height" size="6" class="formInput">
-                            <label for="weight"><h3 style="margin-bottom: 0px;">Weight</h3></label> 
-                            <input type="text" id="weight" name="weight" size="6" class="formInput">
-                        </div>                      
-                    </p>
-                    <p>
-                        <div id="biography" style="float: right; margin-left: 10px; margin-right: 10%;">
-                            <label for="bio"><h3 style="margin-bottom: 0px;">Description and Background</h3></label> 
-                            <textarea form="characterSheet" id="bio" name="bio" rows="8" cols="50" style="margin-right: 10px;"></textarea>
+                        <div id="biography" style="margin: auto;">
+                            <p>
+                                <label for="bio"><h3 style="margin-bottom: 0px;">Description and Background</h3></label> 
+                                <textarea form="characterSheet" id="bio" name="bio" rows="8" cols="50" style="margin-right: 10px;"></textarea>
+                            </p>
                         </div>
-                    </p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div id="vitality" class="section">
-                    <!-- <h1 style="text-align: center;">Vitality</h1> -->
-                    <h2>Vitality</h2>
-                    <table style="margin: auto; border-spacing: 30px 0px;">
-                        <tr>
-                            <th><label for="survival"><h3 style="margin-bottom: 0px;">Survival</h3></label></th>
-                            <th><label for="stressCurrent"><h3 style="margin-bottom: 0px;">Stress</h3></label></th>
-                            <th><label for="damageCurrent"><h3 style="margin-bottom: 0px;">Damage</h3> </label></th>
-                            <th><label for="wounds"><h3 style="margin-bottom: 0px;">Wounds</h3></label></th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" id="survival" name="survival" size="4" class="formInput"></td>
-                            <td><input type="text" id="stressCurrent" name="current_stress" size="3"> / <input type="text" id="stressMax" name="max_stress" size="3"></td>
-                            <td><input type="text" id="damageCurrent" name="current_damage" size="3"> / <input type="text" id="damageMax" name="max_damage" size="3"></td>
-                            <td><input type="text" id="wounds" name="wounds" size="3"></td>
-                        </tr>
-                    </table>
-                    <div id="damageAllocations">
-                        <label for="damageAlloc1"><h3 style="margin-bottom: 0px;">Damage Allocations</h3></label>
-                        <input type="text" size="2" id="damageAlloc1" name="damage_allocation_1">
-                        <input type="text" size="2" id="damageAlloc2" name="damage_allocation_2">
-                        <input type="text" size="2" id="damageAlloc3" name="damage_allocation_3">
-                        <input type="text" size="2" id="damageAlloc4" name="damage_allocation_4">
-                        <input type="text" size="2" id="damageAlloc5" name="damage_allocation_5">
+                <div class="row">
+                    <div id="vitality" class="section">
+                        <h2>Vitality</h2>
+                        <table style="margin: auto; border-spacing: 30px 0px;">
+                            <tr>
+                                <th><label for="survival"><h3 style="margin-bottom: 0px;">Survival</h3></label></th>
+                                <th><label for="stressCurrent"><h3 style="margin-bottom: 0px;">Stress</h3></label></th>
+                                <th><label for="damageCurrent"><h3 style="margin-bottom: 0px;">Damage</h3> </label></th>
+                                <th><label for="wounds"><h3 style="margin-bottom: 0px;">Wounds</h3></label></th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="survival" name="survival" size="4" class="formInput"></td>
+                                <td><input type="text" id="stressCurrent" name="current_stress" size="3"> / <input type="text" id="stressMax" name="max_stress" size="3"></td>
+                                <td><input type="text" id="damageCurrent" name="current_damage" size="3"> / <input type="text" id="damageMax" name="max_damage" size="3"></td>
+                                <td><input type="text" id="wounds" name="wounds" size="3"></td>
+                            </tr>
+                        </table>
+                        <div id="damageAllocations">
+                            <label for="damageAlloc1"><h3 style="margin-bottom: 0px;">Damage Allocations</h3></label>
+                            <input type="text" size="2" id="damageAlloc1" name="damage_allocation_1">
+                            <input type="text" size="2" id="damageAlloc2" name="damage_allocation_2">
+                            <input type="text" size="2" id="damageAlloc3" name="damage_allocation_3">
+                            <input type="text" size="2" id="damageAlloc4" name="damage_allocation_4">
+                            <input type="text" size="2" id="damageAlloc5" name="damage_allocation_5">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="injuries" class="section">
+                        <h2>Injuries</h2>
+                        <table style="margin: auto; border-spacing: 30px 0px;">
+                            <tr>
+                                <th><h3 style="margin-bottom: 0px;">Magnitude</h3></th>
+                                <th><h3 style="margin-bottom: 0px;">Name</h3></th>
+                                <th><h3 style="margin-bottom: 0px;">Damage Allocations</h3></th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" size="2" name="injury_1_magnitude" id="injuryMag1"></td>
+                                <td><input type="text" id="injuryName1" name="injury_1_name"></td>
+                                <td>
+                                    <input type="text" size="2" name="injury_1_allocation_1" id="injury1Alloc1">
+                                    <input type="text" size="2" name="injury_1_allocation_2" id="injury1Alloc2">
+                                    <input type="text" size="2" name="injury_1_allocation_3" id="injury1Alloc3">
+                                    <input type="text" size="2" name="injury_1_allocation_4" id="injury1Alloc4">
+                                    <input type="text" size="2" name="injury_1_allocation_5" id="injury1Alloc5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" size="2" name="injury_2_magnitude" id="injuryMag2"></td>
+                                <td><input type="text" id="injuryName2"></td>
+                                <td>
+                                    <input type="text" size="2" name="injury_2_allocation_1" id="injury2Alloc1">
+                                    <input type="text" size="2" name="injury_2_allocation_2" id="injury2Alloc2">
+                                    <input type="text" size="2" name="injury_2_allocation_3" id="injury2Alloc3">
+                                    <input type="text" size="2" name="injury_2_allocation_4" id="injury2Alloc4">
+                                    <input type="text" size="2" name="injury_2_allocation_5" id="injury2Alloc5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" size="2" name="injury_3_magnitude" id="injuryMag3"></td>
+                                <td><input type="text" id="injuryName3"></td>
+                                <td>
+                                    <input type="text" size="2" name="injury_3_allocation_1" id="injury3Alloc1">
+                                    <input type="text" size="2" name="injury_3_allocation_2" id="injury3Alloc2">
+                                    <input type="text" size="2" name="injury_3_allocation_3" id="injury3Alloc3">
+                                    <input type="text" size="2" name="injury_3_allocation_4" id="injury3Alloc4">
+                                    <input type="text" size="2" name="injury_3_allocation_5" id="injury3Alloc5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" size="2" name="injury_4_magnitude" id="injuryMag4"></td>
+                                <td><input type="text" id="injuryName4"></td>
+                                <td>
+                                    <input type="text" size="2" name="injury_4_allocation_1" id="injury4Alloc1">
+                                    <input type="text" size="2" name="injury_4_allocation_2" id="injury4Alloc2">
+                                    <input type="text" size="2" name="injury_4_allocation_3" id="injury4Alloc3">
+                                    <input type="text" size="2" name="injury_4_allocation_4" id="injury4Alloc4">
+                                    <input type="text" size="2" name="injury_4_allocation_5" id="injury4Alloc5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" size="2" name="injury_5_magnitude" id="injuryMag5"></td>
+                                <td><input type="text" id="injuryName5"></td>
+                                <td>
+                                    <input type="text" size="2" name="injury_5_allocation_1" id="injury5Alloc1">
+                                    <input type="text" size="2" name="injury_5_allocation_2" id="injury5Alloc2">
+                                    <input type="text" size="2" name="injury_5_allocation_3" id="injury5Alloc3">
+                                    <input type="text" size="2" name="injury_5_allocation_4" id="injury5Alloc4">
+                                    <input type="text" size="2" name="injury_5_allocation_5" id="injury5Alloc5">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="illness" class="section">
+                        <h2>Illness</h2>
+                        <div id="illness" style="margin: auto;">
+                            <h3 style="margin-bottom: 0px;">Magnitude</h3>
+                            <input type="text" name="viral" size="2">
+                            <h3 style="margin-bottom: 0px;">Symptoms</h3>
+                            <textarea id="symptoms" name="symptoms" rows="2" cols="30"></textarea>
+                        </div>
+                        <div id="disadvantageCoping" style="float: right; margin-right: 10%;">
+                            <h3 style="margin-bottom: 0px;">Disadvantages & Coping Mechanisms</h3>
+                            <textarea id="disadvantage" name="disadvantage" rows="10" cols="30" oninput="textReplace(this.id);"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div id="injuries" class="section">
-                    <h2>Injuries</h2>
-                    <table style="margin: auto; border-spacing: 30px 0px;">
-                        <tr>
-                            <th><h3 style="margin-bottom: 0px;">Magnitude</h3></th>
-                            <th><h3 style="margin-bottom: 0px;">Name</h3></th>
-                            <th><h3 style="margin-bottom: 0px;">Damage Allocations</h3></th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" size="2" name="injury_1_magnitude" id="injuryMag1"></td>
-                            <td><input type="text" id="injuryName1" name="injury_1_name"></td>
-                            <td>
-                                <input type="text" size="2" name="injury_1_allocation_1" id="injury1Alloc1">
-                                <input type="text" size="2" name="injury_1_allocation_2" id="injury1Alloc2">
-                                <input type="text" size="2" name="injury_1_allocation_3" id="injury1Alloc3">
-                                <input type="text" size="2" name="injury_1_allocation_4" id="injury1Alloc4">
-                                <input type="text" size="2" name="injury_1_allocation_5" id="injury1Alloc5">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" size="2" name="injury_2_magnitude" id="injuryMag2"></td>
-                            <td><input type="text" id="injuryName2"></td>
-                            <td>
-                                <input type="text" size="2" name="injury_2_allocation_1" id="injury2Alloc1">
-                                <input type="text" size="2" name="injury_2_allocation_2" id="injury2Alloc2">
-                                <input type="text" size="2" name="injury_2_allocation_3" id="injury2Alloc3">
-                                <input type="text" size="2" name="injury_2_allocation_4" id="injury2Alloc4">
-                                <input type="text" size="2" name="injury_2_allocation_5" id="injury2Alloc5">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" size="2" name="injury_3_magnitude" id="injuryMag3"></td>
-                            <td><input type="text" id="injuryName3"></td>
-                            <td>
-                                <input type="text" size="2" name="injury_3_allocation_1" id="injury3Alloc1">
-                                <input type="text" size="2" name="injury_3_allocation_2" id="injury3Alloc2">
-                                <input type="text" size="2" name="injury_3_allocation_3" id="injury3Alloc3">
-                                <input type="text" size="2" name="injury_3_allocation_4" id="injury3Alloc4">
-                                <input type="text" size="2" name="injury_3_allocation_5" id="injury3Alloc5">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" size="2" name="injury_4_magnitude" id="injuryMag4"></td>
-                            <td><input type="text" id="injuryName4"></td>
-                            <td>
-                                <input type="text" size="2" name="injury_4_allocation_1" id="injury4Alloc1">
-                                <input type="text" size="2" name="injury_4_allocation_2" id="injury4Alloc2">
-                                <input type="text" size="2" name="injury_4_allocation_3" id="injury4Alloc3">
-                                <input type="text" size="2" name="injury_4_allocation_4" id="injury4Alloc4">
-                                <input type="text" size="2" name="injury_4_allocation_5" id="injury4Alloc5">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" size="2" name="injury_5_magnitude" id="injuryMag5"></td>
-                            <td><input type="text" id="injuryName5"></td>
-                            <td>
-                                <input type="text" size="2" name="injury_5_allocation_1" id="injury5Alloc1">
-                                <input type="text" size="2" name="injury_5_allocation_2" id="injury5Alloc2">
-                                <input type="text" size="2" name="injury_5_allocation_3" id="injury5Alloc3">
-                                <input type="text" size="2" name="injury_5_allocation_4" id="injury5Alloc4">
-                                <input type="text" size="2" name="injury_5_allocation_5" id="injury5Alloc5">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div id="illness" class="section">
-                    <h2>Illness</h2>
-                    <div id="illness" style="float: left; margin-left: 10%;">
-                        <h3 style="margin-bottom: 0px;">Magnitude</h3>
-                        <input type="text" name="viral" size="2">
-                        <h3 style="margin-bottom: 0px;">Symptoms</h3>
-                        <textarea id="symptoms" name="symptoms" rows="2" cols="30"></textarea>
-                    </div>
-                    <div id="disadvantageCoping" style="float: right; margin-right: 10%;">
-                        <h3 style="margin-bottom: 0px;">Disadvantages & Coping Mechanisms</h3>
-                        <textarea id="disadvantage" name="disadvantage" rows="10" cols="30" oninput="textReplace(this.id);"></textarea>
+        <!-- Skills and Abilities Tab -->
+            <div id="skillsTab" class="tab-inactive">
+                <div class="row">
+                    <div id="abilities" class="section">
+                        <h2>Abilities</h2>
+                        <textarea id="ability-text" name="abilities" rows="30" cols="110" onInput="textReplace(this.id);" style="margin: 30px 10px 0 10px;"></textarea>
+                        <div id="iconKey" style="margin-left: 10px; text-align: left;">
+                            <h3>Icons</h3>
+                            <p>
+                                Use the following codes to display the corresponding icon.
+                            </p>
+                            <p>
+                                /success/ = 🟢<br />
+                                /failure/ = 🔴<br />
+                                /survival/ = 🔶<br />
+                                /skill/ = 🟩<br />
+                                /mastery/ = 🟦<br />
+                                /difficulty/ = ⬛️<br />
+                                /depletion/ = ⬜<br />
+                                /damage/ = 🟥<br />
+                                /risk/ = ⚠<br />
+                                /stress/ = 💢
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div id="abilities" class="section">
-                    <h2>Abilities</h2>
-                    <textarea id="ability-text" name="abilities" rows="30" cols="70" onInput="textReplace(this.id);" style="float: left; margin-top: 30px;"></textarea>
-                    <div id="iconKey" style="float: left; margin-left: 10px;">
-                        <h3>Icons</h3>
-                        <p>
-                            Use the following codes to display the corresponding icon.
-                        </p>
-                        <p>
-                            /success/ = 🟢<br />
-                            /failure/ = 🔴<br />
-                            /survival/ = 🔶<br />
-                            /skill/ = 🟩<br />
-                            /mastery/ = 🟦<br />
-                            /difficulty/ = ⬛️<br />
-                            /depletion/ = ⬜<br />
-                            /damage/ = 🟥<br />
-                            /risk/ = ⚠<br />
-                            /stress/ = 💢
-                        </p>
-                    </div>
-                </div>
+        <!-- Gear and Inventory Tab -->
+            <div id="inventoryTab" class="tab-inactive">
+
+            </div>
+            <div id="formButtons" style="margin-bottom: 50px;">
+                <button type="submit" form="characterSheet" value="addEnemy" id="saveButton">Save Character Sheet</button>
+                <input type="file" id="loadCharacter" hidden />
+                <label for="loadCharacter" class="upload-button">Load Character Sheet</label>
             </div>
         </form>
     </div>

@@ -6,11 +6,6 @@
   <link rel="stylesheet" href="https://use.typekit.net/shm6xuk.css" />
   </head>
   <body onload="saveName();">
-    <!-- <script type="text/javascript" >
-        $(document).ready(function() {
-           $(".markItUp").markItUp(mySettings);
-        });
-    </script> -->
     <div id="nav-bar" class="navbar">
         <img src="../images/logo.png" alt="BGC logo" style="margin-left: 10%;" width="165px">
         <a href="../index.html">Home</a>
@@ -72,38 +67,42 @@
                 <div class="row">
                     <div id="vitality" class="section">
                         <h2>Vitality</h2>
-                        <table style="margin: auto; border-spacing: 30px 0px;">
+                        <table class="skills" style="margin: auto; margin-top: 20px; border-spacing: 30px 0px;">
                             <tr>
-                                <th><label for="survival"><h3 style="margin-bottom: 0px;">Survival</h3></label></th>
-                                <th><label for="stressCurrent"><h3 style="margin-bottom: 0px;">Stress</h3></label></th>
-                                <th><label for="damageCurrent"><h3 style="margin-bottom: 0px;">Damage</h3> </label></th>
-                                <th><label for="wounds"><h3 style="margin-bottom: 0px;">Wounds</h3></label></th>
+                                <th><label for="survivalPoints">Survival Points</label></th>
+                                <th><label for="stressCurrent">Stress</label></th>
+                                <th><label for="damageCurrent">Damage</label></th>
+                                <th><label for="wounds">Wounds</label></th>
                             </tr>
                             <tr>
-                                <td><input type="text" id="survival" name="survival" size="4" class="formInput"></td>
+                                <td><input type="text" id="survivalPoints" name="survivalPoints" size="4" class="formInput"></td>
                                 <td><input type="text" id="stressCurrent" name="current_stress" size="3"> / <input type="text" id="stressMax" name="max_stress" size="3"></td>
                                 <td><input type="text" id="damageCurrent" name="current_damage" size="3"> / <input type="text" id="damageMax" name="max_damage" size="3"></td>
                                 <td><input type="text" id="wounds" name="wounds" size="3"></td>
                             </tr>
                         </table>
                         <div id="damageAllocations">
-                            <label for="damageAlloc1"><h3 style="margin-bottom: 0px;">Damage Allocations</h3></label>
-                            <input type="text" size="2" id="damageAlloc1" name="damage_allocation_1">
-                            <input type="text" size="2" id="damageAlloc2" name="damage_allocation_2">
-                            <input type="text" size="2" id="damageAlloc3" name="damage_allocation_3">
-                            <input type="text" size="2" id="damageAlloc4" name="damage_allocation_4">
-                            <input type="text" size="2" id="damageAlloc5" name="damage_allocation_5">
+                            <h3>Damage Allocations</h3>
+                            <table class="skills" style="margin: auto;">
+                            <tr>
+                                <td><input type="text" size="2" id="damageAlloc1" name="damage_allocation_1"></td>
+                                <td><input type="text" size="2" id="damageAlloc2" name="damage_allocation_2"></td>
+                                <td><input type="text" size="2" id="damageAlloc3" name="damage_allocation_3"></td>
+                                <td><input type="text" size="2" id="damageAlloc4" name="damage_allocation_4"></td>
+                                <td><input type="text" size="2" id="damageAlloc5" name="damage_allocation_5"></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div id="injuries" class="section">
                         <h2>Injuries</h2>
-                        <table style="margin: auto; border-spacing: 30px 0px;">
+                        <table class="skills" style="margin: auto; margin-top: 20px; border-spacing: 30px 0px;">
                             <tr>
-                                <th><h3 style="margin-bottom: 0px;">Magnitude</h3></th>
-                                <th><h3 style="margin-bottom: 0px;">Name</h3></th>
-                                <th><h3 style="margin-bottom: 0px;">Damage Allocations</h3></th>
+                                <th>Magnitude</th>
+                                <th>Name</th>
+                                <th>Damage Allocations</th>
                             </tr>
                             <tr>
                                 <td><input type="text" size="2" name="injury_1_magnitude" id="injuryMag1"></td>
@@ -173,7 +172,7 @@
                             </div>
                             <div>
                                 <h3 style="margin-bottom: 0px;">Symptoms</h3>
-                                <textarea id="symptoms" name="symptoms" rows="5" cols="30"></textarea>
+                                <textarea id="symptoms" name="symptoms" rows="5" cols="30" onInput="textReplace(this.id);"></textarea>
                             </div>
                         </div>
                         <div id="disadvantageCoping" style="margin: auto;">
@@ -185,6 +184,76 @@
             </div>
         <!-- Skills and Abilities Tab -->
             <div id="skillsTab" class="tab-inactive">
+                <div class="row">
+                    <div class="section">
+                        <h2>Skill Matrix</h2>
+                        <table id="skill-matrix" class="skills" style="margin: auto; margin-top: 20px; margin-bottom: 20px;">
+                            <tr>
+                                <th style="background-color: #616FD5; color: #FFFFFF;">Skills</th>
+                                <th>
+                                    Athletics<br />
+                                    <input type="text" name="athletics" size="1">
+                                </th>
+                                <th>
+                                    Attitude<br />
+                                    <input type="text" name="attitude" size="1">
+                                </th>
+                                <th>
+                                    Background<br />
+                                    <input type="text" name="background" size="1">
+                                </th>
+                                <th>
+                                    Combat<br />
+                                    <input type="text" name="combat" size="1">
+                                </th>
+                                <th>
+                                    Perception<br />
+                                    <input type="text" name="perception" size="1">
+                                </th>
+                                <th>
+                                    Survival<br />
+                                    <input type="text" name="survival" size="1">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Muscle<br />
+                                    <input type="text" name="muslce" size="1">
+                                </th>
+                                <td>Agility</td>
+                                <td>Intimidation</td>
+                                <td>Security</td>
+                                <td>Melee</td>
+                                <td>Navigation</td>
+                                <td>Scavenging</td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Brains<br />
+                                    <input type="text" name="brains" size="1">
+                                </th>
+                                <td>Stealth</td>
+                                <td>Persuasion</td>
+                                <td>Education</td>
+                                <td>Ranged</td>
+                                <td>Evaluation</td>
+                                <td>Crafting</td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Grit<br />
+                                    <input type="text" name="grit" size="1">
+                                </th>
+                                <td>Endurance</td>
+                                <td>Morale</td>
+                                <td>Contacts</td>
+                                <td>Resolve</td>
+                                <td>Awareness</td>
+                                <td>Medicine</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
                 <div class="row">
                     <div id="abilities" class="section">
                         <h2>Abilities</h2>

@@ -7,36 +7,48 @@
     <link rel="stylesheet" href="mephitis-rules.css">
     </head>
     <body>
+        <div id="nav-bar" class="navbar">
+            <img src="../../images/logo.png" alt="BGC logo" style="margin-left: 10%;" width="165px">
+            <a href="../../index.html">Home</a>
+            <a href="../../games.html">Games</a>
+            <a href="../../about.html">About</a>
+            <div id="login">
+                <input type="text" placeholder="username">
+                <br />
+                <input type="password" placeholder="password">
+                <br />
+                <button style="padding: 5px; margin-top: 5px; letter-spacing: 1.5px;">Login</button>
+            </div>
+        </div>
          <!-- Side navigation -->
-<div class="sidenav">
-    <a href="#scavenging"><h3>Chapter X: Scavenging</h3></a>
-    <hr />
-    <a href="#scavenge-capacity">Scavenge Capacity</a>
-    <a href="#search-location">Searching Locations</a>
-    <hr />
-    <a href="contents.html">Table of Contents</a>
-    <a href="skill-checks.html">Previous: Skill Checks</a>
-    <a href="encounters.html">Next: Encounters</a>
-  </div>
-  
-  <!-- Page content -->
-  <div class="main">
-    <h1 id="scavenging">Chapter X: Scavenging</h1>
-    <hr />
-    <p>Survivors will often find themselves spending time and energy searching areas they’ve visited trying to find sustenance, gear, and tools. Scavenging is an important part of surviving Mephitis. Survivors can search and scavenge for any specific item or provision from a location in which it could be reasonably found.</p>
-    <h2 id="scavenge-capacity">Scavenge Capacity</h2>
-    <hr />
-    <p>A location can only hold a finite amount of resources which can be found by the survivors. Many stores, homes, or warehouses would have been picked clean during initial panic as the outbreak started. As such, a location’s scavenge capacity must be determined before the location can be searched. Follow these steps to determine the location’s scavenge capacity.</p>
-    <ul>
-        <li>Each survivor who wishes to search the location performs a Scavenging skill check. These checks are all performed at the same time. Stress may be taken to force successes as normal. 🔴 do not generate ⚠️.</li>
-        <li>Each 🟢 in excess of the total 🔴 adds 1d3 to the location’s scavenge capacity dice pool.</li>
-        <li>Roll all of the dice included in the dice pool. The total value shown by all dice represents the location's scavenge capacity.</li>
-    </ul>
-    <h2 id="search-location">Searching Locations</h2>
-    <hr />
-    <p>A survivor performs a Scavenging(Search) check. On a success, the survivor states an item they wish to find. They should specify an item which would make sense to be found in the location. For example, a survivor might easily find a lighter in a convenience store but probably wouldn’t be able to find a mattress. Conversely, a department store might be filled with articles of clothing but would rarely house a tire iron. The survivor should use common sense when stating an item they wish to find, however they may work with the GM to get creative. Panic during the apocalypse pushed many people to looting, and items may have been scattered about. It ultimately comes down to the GM’s say whether a particular item can be found in the location.</p>
-    <p>After the survivor has stated an item they wish to find, the GM gives the item a price. The survivor must spend that much 🔶 in order to purchase the item. See the table below for pricing based on common item sizes. Particularly rare items may be increased in price at the GM’s discretion. The GM may additionally spend ⚠️ to increase an item’s price, while the survivor may spend 🟢 to reduce it. When the final price has been determined, the survivor reduces their 🔶 by that much, then adds the found item to their inventory. Finally, perform a depletion roll for the location. When a location’s capacity has been exhausted, survivors may no longer find anything useful at that location. Further scavenging is just a waste of time.</p>
-</div> 
+        <div class="sidenav">
+            <a href="#scavenging"><h3>Chapter X: Scavenging</h3></a>
+            <hr />
+            <a href="#scavenge-capacity">Scavenge Capacity</a>
+            <a href="#search-location">Searching Locations</a>
+            <hr />
+            <a href="contents.html">Table of Contents</a>
+            <a href="skill-checks.html">Previous: Skill Checks</a>
+            <a href="encounters.html">Next: Encounters</a>
+        </div>
+        
+        <!-- Page content -->
+        <div class="main">
+            <div class="title" style="margin-top: 0%;"><h1 id="scavenging">Chapter X: Scavenging</h1></div>
+            <p>Survivors will often find themselves spending time and energy searching areas they’ve visited trying to find sustenance, gear, and tools. Scavenging is an important part of surviving Mephitis. Survivors can search and scavenge for any specific item or provision from a location in which it could be reasonably found.</p>
+            <h2 id="scavenge-capacity">Scavenge Capacity</h2>
+            <hr />
+            <p>A location can only hold a finite amount of resources which can be found by the survivors. Many stores, homes, or warehouses would have been picked clean during initial panic as the outbreak started. As such, a location’s scavenge capacity must be determined before the location can be searched. Follow these steps to determine the location’s scavenge capacity.</p>
+            <ul>
+                <li>Each survivor who wishes to search the location performs a Scavenging skill check. These checks are all performed at the same time. Stress may be taken to force successes as normal. 🔴 do not generate ⚠️.</li>
+                <li>Each 🟢 in excess of the total 🔴 adds 1d3 to the location’s scavenge capacity dice pool.</li>
+                <li>Roll all of the dice included in the dice pool. The total value shown by all dice represents the location's scavenge capacity.</li>
+            </ul>
+            <h2 id="search-location">Searching Locations</h2>
+            <hr />
+            <p>A survivor performs a Scavenging(Search) check. On a success, the survivor states an item they wish to find. They should specify an item which would make sense to be found in the location. For example, a survivor might easily find a lighter in a convenience store but probably wouldn’t be able to find a mattress. Conversely, a department store might be filled with articles of clothing but would rarely house a tire iron. The survivor should use common sense when stating an item they wish to find, however they may work with the GM to get creative. Panic during the apocalypse pushed many people to looting, and items may have been scattered about. It ultimately comes down to the GM’s say whether a particular item can be found in the location.</p>
+            <p>After the survivor has stated an item they wish to find, the GM gives the item a price. The survivor must spend that much 🔶 in order to purchase the item. See the table below for pricing based on common item sizes. Particularly rare items may be increased in price at the GM’s discretion. The GM may additionally spend ⚠️ to increase an item’s price, while the survivor may spend 🟢 to reduce it. When the final price has been determined, the survivor reduces their 🔶 by that much, then adds the found item to their inventory. Finally, perform a depletion roll for the location. When a location’s capacity has been exhausted, survivors may no longer find anything useful at that location. Further scavenging is just a waste of time.</p>
+        </div> 
     </body>
     <script src="mephitis-rules.js" type="text/javascript"></script>
 </html>

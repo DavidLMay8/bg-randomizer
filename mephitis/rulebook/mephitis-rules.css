@@ -4,25 +4,41 @@ table, th, td {
 
 h2, h3, h4 {
   margin-left: 10px;
+  font-family: Roboto,Helvetica,sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 p {
   margin-left: 10px;
   margin-right: 10px;
+  font-family: Roboto,Helvetica,sans-serif;
+}
+
+div.scroll { 
+  margin:4px, 4px; 
+  padding:4px; 
+  background-color: green; 
+  width: 500px; 
+  height: 110px; 
+  overflow-x: hidden; 
+  overflow-x: auto; 
+  text-align:justify; 
 }
 
  /* The sidebar menu */
  .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
+    /* height: 100vh; /* Full-height: remove this if you want "auto" height */
     width: 300px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 96px; /* Stay at the top */
-    left: 0;
+    bottom: 96px;
+    left: 20px;
     background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-    font-family: bc-alphapipe, sans-serif;
+    overflow-x: hidden;
+    padding-top: 10px;
+    font-family: Roboto,Helvetica,sans-serif;
     font-weight: 400;
     font-style: normal;
   }
@@ -35,7 +51,7 @@ p {
   .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 18px;
     color: #818181;
     display: block;
   }
@@ -47,16 +63,17 @@ p {
 
   .subtitle a {
     margin-left: 25px;
-    font-size: 18px;
+    font-size: 16px;
 }
   
   /* Style page content */
   .main {
-    margin-left: 300px; /* Same as the width of the sidebar */
+    margin-left: 400px; /* Same as the width of the sidebar */
+    margin-right: 100px;
     padding: 0px;
-    /* font-family: komet-sc, sans-serif;
-    font-weight: 200;
-    font-style: normal; */
+    font-family: Roboto,Helvetica,sans-serif;
+    /* font-weight: 200; */
+    font-style: normal;
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */

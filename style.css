@@ -304,6 +304,11 @@ table, th, td {
     font-style: normal;
 }
 
+#nav-bar {
+    position: fixed;
+    top: 0;
+ }
+
 .navbar {
     font-family: bc-alphapipe, sans-serif;
     font-weight: 400;
@@ -314,6 +319,7 @@ table, th, td {
     border-bottom: 1px solid #E0E0E0;
     white-space: nowrap;
     width:100%;
+    background-color: #FFFFFF;
 }
 
 .navbar img {
@@ -325,6 +331,10 @@ table, th, td {
     margin-left: 8%;
     margin-top: 33px;
     float: left;
+}
+
+.main {
+    margin-top: 96px;
 }
 
 #login {

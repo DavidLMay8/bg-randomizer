@@ -7,53 +7,64 @@
     <link rel="stylesheet" href="mephitis-rules.css">
     </head>
     <body>
+        <!-- Navbar -->
+        <div id="nav-bar" class="navbar">
+            <img src="../../images/logo.png" alt="BGC logo" style="margin-left: 10%;" width="165px">
+            <a href="../../index.html">Home</a>
+            <a href="../../games.html">Games</a>
+            <a href="../../about.html">About</a>
+            <div id="login">
+                <input type="text" placeholder="username">
+                <br />
+                <input type="password" placeholder="password">
+                <br />
+                <button style="padding: 5px; margin-top: 5px; letter-spacing: 1.5px;">Login</button>
+            </div>
+        </div>
          <!-- Side navigation -->
-<div class="sidenav">
-    <a href="#encounters"><h3>Chapter X: Encounters</h3></a>
-    <hr />
-    <a href="#initiating-encounters">Initiating Encounters</a>
-    <a href="#survivor-response">Survivor Response</a>
-    <hr />
-    <a href="contents.html">Table of Contents</a>
-    <a href="scavenging.html">Previous: Scavenging</a>
-    <a href="combat.html">Next: Combat</a>
-  </div>
-  
-  <!-- Page content -->
-  <div class="main">
-    <div id="nav-bar" class="navbar">
-        <img src="../../images/logo.png" alt="BGC logo" style="margin-left: 10%;" width="165px">
-        <a href="../../index.html">Home</a>
-        <a href="../../games.html">Games</a>
-        <a href="../../about.html">About</a>
-        <!-- <div id="login">
-            <input type="text" placeholder="username">
-            <br />
-            <input type="password" placeholder="password">
-            <br />
-            <button style="padding: 5px; margin-top: 5px; letter-spacing: 1.5px;">Login</button>
-        </div> -->
-    </div>
-    <div class="title"><h1 id="combat">Chapter X: Combat</h1></div>
-    <p>Surviving Mephitis means fighting for one’s life. A survivor may often come into contact with the infected or even with hostile members of the living. In such cases, combat might be unavoidable. Many encounters created by the GM revolve around combat and are called combat encounters. Combat encounters flow over a series of rounds until they reach a conclusion, usually a victory achieved when the survivors defeat their enemies. Each round represents only a few seconds of in-game time, with many encounters over within a minute.</p>
-    <h2 id="initiative">The Initiative Roll</h2>
-    <hr />
-    <p>When combat begins, all participants (player survivors, NPCs, infected, etc.) roll for initiative. Each player makes a Prowess roll, applies any modifiers they may have, and lets the GM know their final result. The GM makes an initiative roll for each NPC involved in the combat, then takes the results of all players and all NPCs and lists them in order to determine initiative order during combat.</p>
-    <h2 id="rounds">Combat Rounds</h2>
-    <hr />
-    <p>Combat takes place over a series of rounds to completion. A combat round begins with the first participant in initiative order and ends with the last participant in initiative order.</p>
-    <h2 id="turn">Combatant Turn</h2>
-    <hr />
-    <p>During their turn, a participant can move and take up to one of the following actions, in any order:</p>
-    <ul>
-        <li><b>Attack</b> - See <a href="#attacking">Attacking.</a></li>
-        <li><b>Dash</b> - The combatant may move again.</li>
-        <li><b>Disengage</b> - Until the end of the round, the combatant's movement does not provoke attacks of opportunity.</li>
-    </ul>
-    <h2 id="attacking">Attacking</h2>
-    <hr />
-    <p>When attacking with a melee or ranged weapon, follow the structure below to resolve the attack.</p>
-</div> 
+        <div class="sidenav">
+            <a href="#encounters"><h3>Chapter X: Encounters</h3></a>
+            <hr />
+            <a href="#initiating-encounters">Initiating Encounters</a>
+            <a href="#survivor-response">Survivor Response</a>
+            <hr />
+            <a href="contents.html">Table of Contents</a>
+            <a href="encounters.html">Previous: Encounters</a>
+            <a href="damage.html">Next: Damage</a>
+        </div>
+        
+        <!-- Page content -->
+        <div class="main">
+            <div class="title"><h1 id="combat">Chapter X: Combat</h1></div>
+            <p>Surviving Mephitis means fighting for one’s life. A survivor may often come into contact with the infected or even with hostile members of the living. In such cases, combat might be unavoidable. Many encounters created by the GM revolve around combat and are called combat encounters. Combat encounters flow over a series of rounds until they reach a conclusion, usually a victory achieved when the survivors defeat their enemies. Each round represents only a few seconds of in-game time, with many encounters over within a minute.</p>
+            <h2 id="initiative">The Initiative Roll</h2>
+            <hr />
+            <p>When combat begins, all participants (player survivors, NPCs, infected, etc.) roll for initiative. Each player makes a Prowess roll, applies any modifiers they may have, and lets the GM know their final result. The GM makes an initiative roll for each NPC involved in the combat, then takes the results of all players and all NPCs and lists them in order to determine initiative order during combat.</p>
+            <h2 id="rounds">Combat Rounds</h2>
+            <hr />
+            <p>Combat takes place over a series of rounds to completion. A combat round begins with the first participant in initiative order and ends with the last participant in initiative order.</p>
+            <h2 id="turn">Combatant Turn</h2>
+            <hr />
+            <p>During their turn, a participant can move and take up to one of the following actions, in any order:</p>
+            <ul>
+                <li><b>Attack</b> - See <a href="#attacking">Attacking.</a></li>
+                <li><b>Dash</b> - The combatant may move again.</li>
+                <li><b>Disengage</b> - Until the end of the round, the combatant's movement does not provoke attacks of opportunity.</li>
+            </ul>
+            <h2 id="attacking">Attacking</h2>
+            <hr />
+            <p>When attacking with a melee or ranged weapon, follow the structure below to resolve the attack.</p>
+            <h3>Choose a target</h3>
+            <p>Pick a target to attack within the attack’s range. A weapon’s profile specifies its range (see Weapons).</p>
+            <h3>Make an attack check</h3>
+            <p>Make a check for either Melee(Attack) or Ranged(Attack), depending on which weapon type is used for the attack. An attack check follows the same flow as any other skill check (see Skill Checks).</p>
+            <h3>Roll damage dice</h3>
+            <p>Every weapon has a base damage value. If the attack skill check is a success, gather a number of 🟥 equal to the weapon’s base damage. A weapon’s profile also details any attack boosts it may have. Attack boosts may be triggered by spending extra 🟢. The most common attack boosts add additional 🟥, but some detail additional rules to follow. After applying any desired attack boosts, roll the final number of 🟥 and apply modifiers.</p>
+            <h3>Resolve defense</h3>
+            <p>After all 🟥 have been rolled and modifiers applied, the target defends against the attack. See <a href="damage.html#defending">Defending Against Damage.</a></p>
+            <h3>Allocate damage dic</h3>
+            <p>All undefended 🟥 are allocated to the target and injuries are checked. For damage allocations against a player character, see Damage and Injuries for damage allocations to an enemy, see Damaging Enemies.</p>
+        </div> 
     </body>
     <script src="mephitis-rules.js" type="text/javascript"></script>
 </html>

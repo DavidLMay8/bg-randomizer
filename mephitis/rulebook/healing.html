@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/shm6xuk.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="mephitis-rules.css">
+    <title>Resting and Healing</title>
     </head>
     <body>
         <!-- Navbar -->
@@ -24,45 +25,45 @@
 
          <!-- Side navigation -->
         <div class="sidenav">
-            <a href="#encounters"><h3>Chapter X: Damage and Injuries</h3></a>
+            <a href="#encounters"><h3>Chapter X: Resting and Healing</h3></a>
             <hr />
             <a href="#defending">Defending Against Damage</a>
             <a href="#damage-dice">Damage Dice</a>
-            <a href="#defense-forms">Forms of Defense</a>
             <a href="#aggravating">Aggravating Injuries</a>
             <a href="#magnitude">Injury Magnitude</a>
             <a href="#injuries">List of Injuries</a>
             <hr />
             <a href="contents.html">Table of Contents</a>
-            <a href="combat.html">Previous: Combat</a>
-            <a href="healing.html">Next: Resting and Healing</a>
+            <a href="damage.html">Previous: Damage and Injuries</a>
+            <a href="abilities.html">Next: Abilities</a>
         </div>
         
         <!-- Page content -->
         <div class="main">
-            <div class="title"><h1 id="combat">Chapter X: Damage and Injuries</h1></div>
+            <div class="title"><h1 id="combat">Chapter X: Resting and Healing</h1></div>
             <p>The world is cruel, and the apocalypse is even worse. Suffering a slip or a scratch can spell death in a world where disease is rampant and the hospitals abandoned. Suffering damage is nearly impossible and is always dangerous. Survivors must traverse the land of the dead carefully.</p>
             <h2 id="defending">Defending Against Damage</h2>
             <hr />
             <p>A character’s defenses help prevent incoming damage, whether from an attack or from the hostile environment. All damage inflicted has a type, no matter the source. Attacks will always specify which type of damage is being dealt, while other types of damage are specified by the GM. For example, if a character fails a Prowess(Acrobatics) check while jumping from a fire escape, the GM may inflict bludgeoning damage due to the fall. A character with defense against bludgeoning would then be able to reduce or prevent some of that damage.</p>
-            <p>All damage is presented to characters in the form of 🟥, which are rolled to determine how much damage is suffered. This is referred to as a <b>damage pool</b>. All 🟥 in a damage pool must be from the same damage type. If an attack would inflict more than one type of damage, a separate damage pool must be created for each type. Every attack specifies a number of 🟥 to add to the damage pool, while the number of 🟥 added for other sources of damage is decided by the GM.</p> 
-            <p>After all 🟥 have been rolled, the character defending against the damage may use abilities, items, or equipment to prevent some of that incoming damage. Defense prevents all damage from one or more 🟥, removing them from a damage pool. Each of these dice is counted as being defended.</p>
-            <h2 id="defense-forms">Forms of Defense</h2>
-            <hr />
-            <p>Equipment, items, and abilities that defend against damage specify how many 🟥 are removed from the damage pool, and whether the value of these 🟥 must not exceed a specified number.
-                <ul>
-                    <li>🟥 - Defend a number of 🟥 shown. Unless specified otherwise, these 🟥 may be removed from any number of damage pools.</li>
-                    <li>🟥 Type - Defend a number of 🟥 shown against a damage pool of the specified damage type. <i>Example: 🟥🟥 Bludgeoning defends two 🟥 in a dice pool inflicting bludgeoning damage.</i></li>
-                    <li>🟥(X) - Defend a number of 🟥 shown which have a value equal to or less than X. Unless specified otherwise, these 🟥 may be removed from any number of damage pools. <i>Example: 🟥(3) defends one 🟥 with a value of 3 or less, but cannot defend any 🟥 with a value greater than 3.</i></li>
-                    <li>🟥(X) Type - Defend a number of 🟥 shown which have a value equal to or less than X from a damage pool of the specified damage type.</li>
-                </ul>
-            </p>
             <h2 id="damage-dice">Damage Allocations</h2>
             <hr />
-            <p>When a character suffers damage, the value of each undefended 🟥 (after any modifiers) is allocated to the character and recorded on their <a href="../mephitis-character-sheet.html">character sheet</a> under Damage Allocations.</p>
+            <p>When a character suffers damage, the value of each undefended 🟥 (after any modifiers) is allocated to the character and recorded on their <a href="../mephitis-character-sheet.html">character sheet</a> under Damage Allocations</p>
             <h2 id="aggravating">Aggravating Injuries</h2>
             <hr />
             <p>If the total value of all 🟥 allocated to a character's Damage Allocations is greater than their Damage Threshold (DT), they must aggravate an injury by moving any number of 🟥 from the character's Damage Allocations to an injury. Aggravating an injury may cause the character to suffer a new injury or may allocate additional 🟥 to an existing injury. To determine the type of injury, use the damage type which caused the injury to be aggravated (Slashing damage would cause a Flesh Wound for instance). When aggravating an injury, enough 🟥 must be moved from the survivor to the injury to reduce the allocation total on the survivor to less than or equal to their DT.</p>
+            <h2 id="attacking">Attacking</h2>
+            <hr />
+            <p>When attacking with a melee or ranged weapon, follow the structure below to resolve the attack.</p>
+            <h3>Choose a target</h3>
+            <p>Pick a target to attack within the attack’s range. A weapon’s profile specifies its range (see Weapons).</p>
+            <h3>Make an attack check</h3>
+            <p>Make a check for either Melee(Attack) or Ranged(Attack), depending on which weapon type is used for the attack. An attack check follows the same flow as any other skill check (see Skill Checks).</p>
+            <h3>Roll damage dice</h3>
+            <p>Every weapon has a base damage value. If the attack skill check is a success, gather a number of 🟥 equal to the weapon’s base damage. A weapon’s profile also details any attack boosts it may have. Attack boosts may be triggered by spending extra 🟢. The most common attack boosts add additional 🟥, but some detail additional rules to follow. After applying any desired attack boosts, roll the final number of 🟥 and apply modifiers.</p>
+            <h3>Resolve defense</h3>
+            <p>After all 🟥 have been rolled and modifiers applied, the target defends against the attack. See <a href="damage.html#defending">Defending Against Damage.</a></p>
+            <h3>Allocate damage dice</h3>
+            <p>All undefended 🟥 are allocated to the target and injuries are checked. For damage allocations against a player character, see Damage and Injuries for damage allocations to an enemy, see Damaging Enemies.</p>
         </div> 
     </body>
     <script src="mephitis-rules.js" type="text/javascript"></script>

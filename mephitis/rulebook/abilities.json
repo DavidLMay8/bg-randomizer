@@ -1,0 +1,12 @@
+{
+    "ability": {
+        "title": "Rage",
+        "attribute": "Body",
+        "rules": "On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\\nAdd 1🟩 to Athletics checks and Athletics save throws.\\n",
+        "tier_1": {
+            "uses": 2,
+            "mastery": 1,
+            "defense": "🟥(lowest)"
+        }
+    }
+}

@@ -248,13 +248,13 @@
                     <div class="row">
                         <div id="abilities" class="section"  style="width: 1000px; padding: 10px; text-align: left;">
                             <h2>Abilities</h2>
-                            <select id="abilitySelect" onload="loadAbilities()">
-                                <option>Select an Ability</option>
-                            </select>
-                            <button type="button" id="abilityAdd" onclick="addAbility(abilitySelect.value)">Add Ability</button>
                             <div id="abilityText" name="abilities"></div>
                             <div id="abilityCreator" style="text-align: left;">
-                                <h4>Ability Creator</h4>
+                                <h3>Add Abilities</h3>
+                                <select id="abilitySelect" onload="loadAbilities()">
+                                    <option>Select an Ability</option>
+                                </select>
+                                <button type="button" id="abilityAdd" onclick="addAbility(abilitySelect.value)">Add Ability</button><br /><br />
                                 <label for="abilityName">Name</label>
                                 <input type="text" id="abilityName" style="text-align: left;">
                                 <textarea id="ability-text" rows="8" cols="80" onInput="textReplace(this.id);" style="margin: 30px 10px 0 10px;"></textarea><br />

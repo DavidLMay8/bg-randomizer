@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="https://use.typekit.net/shm6xuk.css" />
   </head>
-  <body onload="saveName();">
+  <body onload="saveName(); loadAbilities();">
     <div id="nav-bar" class="navbar">
         <img src="../images/logo.png" alt="BGC logo" style="margin-left: 10%;" width="165px">
         <a href="../index.html">Home</a>
@@ -247,6 +247,12 @@
                     <div class="row">
                         <div id="abilities" class="section">
                             <h2>Abilities</h2>
+                            <select id="abilitySelect" onload="loadAbilities()">
+                                <option>Select an Ability</option>
+                            </select>
+                            <input type="text" id="tier" size="2">
+                            <button type="button" id="abilityAdd" onclick="addAbility(abilitySelect.value, tier.value)">Add Ability</button><br />
+                            <div id="abilityText" name="abilityText"></div>
                             <textarea id="ability-text" name="abilities" rows="30" cols="80" onInput="textReplace(this.id);" style="margin: 30px 10px 0 10px;"></textarea>
                             <div id="iconKey" style="margin-left: 10px; text-align: left;">
                                 <h3>Icons</h3>

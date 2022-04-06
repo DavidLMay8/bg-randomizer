@@ -3,7 +3,7 @@ function handleSubmit(event) {
 
     var readAbilityDiv = document.getElementById('abilityText').innerHTML;
     const data = new FormData(event.target);
-    data.append('abilityText', readAbilityDiv);
+    data.append('abilities', readAbilityDiv);
 
     const name = data.get('name');
     const formJSON = Object.fromEntries(data.entries());
@@ -108,7 +108,7 @@ const streamToText = async (blob) => {
         if (obj.hasOwnProperty(key)) {
             document.getElementsByName(key)[0].value = obj[key];
         }
-        if (key == 'abilityText') {
+        if (key == 'abilities') {
             document.getElementById('abilityText').innerHTML = obj[key];
         }
     }

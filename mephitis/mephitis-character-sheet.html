@@ -2,6 +2,7 @@
 <html>
   <head lang="en">
   <meta charset="UTF-8">
+  <title>Character Sheet</title>
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="https://use.typekit.net/shm6xuk.css" />
   </head>
@@ -245,32 +246,37 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div id="abilities" class="section">
+                        <div id="abilities" class="section"  style="width: 1000px; padding: 10px; text-align: left;">
                             <h2>Abilities</h2>
                             <select id="abilitySelect" onload="loadAbilities()">
                                 <option>Select an Ability</option>
                             </select>
-                            <input type="text" id="tier" size="2">
-                            <button type="button" id="abilityAdd" onclick="addAbility(abilitySelect.value, tier.value)">Add Ability</button><br />
-                            <div id="abilityText" name="abilityText" style="text-align: left; padding: 10px;"></div>
-                            <textarea id="ability-text" name="abilities" rows="30" cols="80" onInput="textReplace(this.id);" style="margin: 30px 10px 0 10px;"></textarea>
-                            <div id="iconKey" style="margin-left: 10px; text-align: left;">
-                                <h3>Icons</h3>
-                                <p>
-                                    Use the following codes to display the corresponding icon. Emojis must be supported for these icons to render properly.
-                                </p>
-                                <p>
-                                    /success/ = 🟢<br />
-                                    /failure/ = 🔴<br />
-                                    /survival/ = 🔶<br />
-                                    /skill/ = 🟩<br />
-                                    /mastery/ = 🟦<br />
-                                    /difficulty/ = ⬛️<br />
-                                    /depletion/ = ⬜<br />
-                                    /damage/ = 🟥<br />
-                                    /risk/ = ⚠<br />
-                                    /stress/ = 💢
-                                </p>
+                            <button type="button" id="abilityAdd" onclick="addAbility(abilitySelect.value)">Add Ability</button>
+                            <div id="abilityText" name="abilities"></div>
+                            <div id="abilityCreator" style="text-align: left;">
+                                <h4>Ability Creator</h4>
+                                <label for="abilityName">Name</label>
+                                <input type="text" id="abilityName" style="text-align: left;">
+                                <textarea id="ability-text" rows="8" cols="80" onInput="textReplace(this.id);" style="margin: 30px 10px 0 10px;"></textarea><br />
+                                <button type="button" id="abilityCreate" onclick="createAbility()">Create Ability</button><br />
+                                <div id="iconKey" style="margin-left: 10px; text-align: left;">
+                                    <h3>Icons</h3>
+                                    <p>
+                                        Use the following codes to display the corresponding icon. Emojis must be supported for these icons to render properly. HTML tags may also be added and will render.
+                                    </p>
+                                    <p>
+                                        /success/ = 🟢<br />
+                                        /failure/ = 🔴<br />
+                                        /survival/ = 🔶<br />
+                                        /skill/ = 🟩<br />
+                                        /mastery/ = 🟦<br />
+                                        /difficulty/ = ⬛️<br />
+                                        /depletion/ = ⬜<br />
+                                        /damage/ = 🟥<br />
+                                        /risk/ = ⚠<br />
+                                        /stress/ = 💢
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -20,6 +20,7 @@ function loadAbilities() {
     }
 }
 
+/*
 function addAbility(abilityChoice, tier) {
     // console.log(choice);
     var abilityBox = document.getElementById('abilityText');
@@ -27,21 +28,32 @@ function addAbility(abilityChoice, tier) {
     var selectedAbility = abilities[abilityChoice];
     var abilityTier = 'tier_' + tier;
     console.log(selectedAbility.rules);
-    var abilityName = document.createElement('button');
+    var abilityName = document.createElement('div');
     abilityName.setAttribute('id', selectedAbility.title);
     abilityName.setAttribute('class', 'collapsible');
-    abilityName.setAttribute('type', 'button');
+    //abilityName.setAttribute('type', 'button');
     abilityName.setAttribute('onclick', 'collapse(this.id)');
     abilityName.innerHTML = selectedAbility.title;
-    var abilityRules = document.createElement('span');
+    var abilityRules = document.createElement('div');
     console.log(selectedAbility.abilityTier);
     abilityRules.setAttribute('class', 'content');
-    abilityRules.innerHTML = selectedAbility.tiers[abilityTier];
+    abilityRules.innerHTML = selectedAbility.rules;
     abilityName.appendChild(abilityRules);
     abilityBox.appendChild(abilityName);
+}
+*/
 
-    var children = abilityName.children[0];
-    console.log(children);
+function addAbility(abilityChoice) {
+    var abilityBox = document.getElementById('abilityText');
+    var selectedAbility = abilities[abilityChoice];
+    var abilityDiv = document.createElement('div');
+    abilityDiv.setAttribute('id', selectedAbility.title);
+    abilityDiv.setAttribute('name', selectedAbility.title);
+    abilityDiv.innerHTML = '<h3>' + selectedAbility.title + '</h3>';
+    var abilityRules = document.createElement('p');
+    abilityRules.innerHTML = selectedAbility.rules;
+    abilityDiv.appendChild(abilityRules);
+    abilityBox.appendChild(abilityDiv);
 }
 
 function collapse(e) {
@@ -68,10 +80,6 @@ const abilities = [
         "title": "Rage",
         "value": 1,
         "attribute": "Body",
-        "rules": "On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n    - Add 1🟩 to Athletics checks and Athletics save throws.\n",
-        "tier_1": [
-            "tier_1", "test"
-        ]
-            
+        "rules": "On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:<p>• Add 1🟩 to Athletics checks and Athletics save throws.</p><p>• If at least 1🟢 is generated during an Athletics(Melee) attack, add a number of 🟦 to your dice pool equal to the Mastery value of the Rage tier table.</p><p>• You gain defense against bludgeoning, piercing, and slashing damage according to the Defense value of the Rage tier table.</p>"
     }
 ]

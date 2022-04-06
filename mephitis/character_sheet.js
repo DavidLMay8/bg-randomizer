@@ -1,18 +1,20 @@
 function handleSubmit(event) {
     event.preventDefault();
 
+    var readAbilityDiv = document.getElementById('abilityText').innerHTML;
     const data = new FormData(event.target);
+    data.append('abilityText', readAbilityDiv);
 
     const name = data.get('name');
     const formJSON = Object.fromEntries(data.entries());
 
     console.log({ formJSON });
 
-    const charName = data.get('name');
+    //const charName = data.get('name');
     var date = new Date().toLocaleString();
     const results = JSON.stringify(formJSON, null, 2);
 
-    download(charName + "_" + date + '.json', results);
+    download(name + "_" + date + '.json', results);
 }
 
 function download(filename, text) {
@@ -105,6 +107,9 @@ const streamToText = async (blob) => {
       for (var key in obj) {
         if (obj.hasOwnProperty(key)) {
             document.getElementsByName(key)[0].value = obj[key];
+        }
+        if (key == 'abilityText') {
+            document.getElementById('abilityText').innerHTML = obj[key];
         }
     }
     saveName();

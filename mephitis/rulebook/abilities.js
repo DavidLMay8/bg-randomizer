@@ -1,18 +1,6 @@
-// fetch('abilities.json')
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         appendData(data);
-//     })
-//     .catch(function (err) {
-//         console.log(err)
-//     });
-
 function loadAbilities() {
     var abilityList = document.getElementById('abilitySelect');
     for (var i = 0; i < abilities.length; i++) {
-        // console.log(abilities[i].title);
         var option = document.createElement('option');
         option.text = abilities[i].title;
         option.value = abilities[i].value;
@@ -27,7 +15,6 @@ function addAbility(abilityChoice) {
     var abilityRules = document.createElement('p');
     var deleteButton = document.createElement('button');
     abilityDiv.setAttribute('id', selectedAbility.title);
-    // abilityDiv.setAttribute('name', selectedAbility.title);
     abilityDiv.innerHTML = '<h3>' + selectedAbility.title + '</h3>';
     abilityRules.innerHTML = selectedAbility.rules;
     deleteButton.setAttribute('type', 'button');
@@ -64,7 +51,6 @@ function deleteAbility(e) {
 }
 
 function collapse(e) {
-    // element.classList.toggle("active");
     var element = document.getElementById(e);
     var content = element.children[0];
     if (content.style.display === "block") {
